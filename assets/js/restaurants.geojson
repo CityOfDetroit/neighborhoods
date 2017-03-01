@@ -1,0 +1,43 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Courtyard Café & Bar",
+        "address": "333 E Jefferson Ave",
+        "city": "Detroit",
+        "type": "Bar",
+        "lat": 42.32993237569809,
+        "long": -83.04153136649188
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.04153136649188,
+          42.32993237569809,
+          0
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Courtyard Café & Bar",
+        "address": "333 E Jefferson Ave",
+        "city": "Detroit",
+        "type": "Bar",
+        "lat": 42.32993237569809,
+        "long": -83.04153136649188
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -83.26099599976556,
+          42.3470849995731,
+          0
+        ]
+      }
+    }
+  ]
+}

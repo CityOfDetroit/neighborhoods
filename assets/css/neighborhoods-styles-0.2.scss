@@ -1,0 +1,431 @@
+// Author: Edgar Montes
+// Department of Innovation Technology
+// Organization: City of Detroit
+/*================== imports ======================*/
+@import url('../fonts/dosis/Dosis-Regular.ttf');
+@import url('../fonts/opensans/OpenSans-Regular.ttf');
+/*================== variables =================*/
+$detroit-color-1: #000;
+$top-bar-color: none;
+$top-bar-font-color: #fff;
+$top-bar-height: 8vh;
+$top-bar-top-spacing: 1em;
+$content-height: 100vh;
+$neighborhood-info-height: 90vh;
+/*================== tags ======================*/
+body {
+	font-family: 'Open Sans', sans-serif;
+	width: 100%;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+}
+main {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+}
+h1,h2,h3,h4,h5{
+	font-family: 'Dosis', sans-serif;
+}
+/*======================= top ==================*/
+#top{
+	overflow: hidden;
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	height: $top-bar-height;
+	color: $top-bar-font-color;
+  top: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+#top-container{
+	@extend .full-width-flex-container;
+	@extend .flex-stretch-content;
+}
+#logo-2{
+  margin-top: -2.5em;
+  max-width: 30em;
+}
+#logo-2 > img{
+  width: 100%;
+}
+#search{
+  width: 30em;
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: $top-bar-font-color;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $top-bar-font-color;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $top-bar-font-color;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: $top-bar-font-color;
+  opacity: 1;
+}
+#address-search{
+	width: 100%;
+  text-align: right;
+  background-color: transparent;
+  color: $top-bar-font-color;
+  border-bottom: 1px solid $top-bar-font-color;
+  height: 6vh;
+  padding-top: 4vh;
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $top-bar-font-color;
+  }
+}
+#address-search:focus{
+  outline: none;
+  -webkit-animation: input-line 0.3s ease forwards;
+}
+#search-btn{
+	background: #fff;
+	color: #000;
+	font-size: 2.25em;
+	padding: 0 1em;
+	@extend .flex-container;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+#search-btn > span{
+	top: 1.25em;
+  margin: 0;
+}
+@-webkit-keyframes input-line {
+0%, 50% {width: 0%}
+100% { width: 100%}
+}
+#spacing-title-search{
+	flex: 1;
+}
+#search-btn{
+  background-color: transparent;
+  color: $top-bar-font-color;
+}
+#search-btn > span{
+  top: 1.25em;
+  margin: 0;
+}
+#search-btn:hover{
+  color: $top-bar-font-color;
+}
+#navigation{
+  background-color: transparent;
+  color: $top-bar-font-color;
+}
+#address-search{
+	color: #000;
+	border: none;
+	height: $top-bar-height;
+	font-size: 1.5em;
+	padding-left: .5em;
+	width: 100%;
+	text-align: right;
+	background-color: transparent;
+	color: $top-bar-font-color;
+	border-bottom: 1px solid $top-bar-font-color;
+	height: 6vh;
+	padding-top: 4vh;
+}
+@media all and (max-width: 800px) {
+	#spacing-title-search{
+		display: none;
+	}
+	#search{
+		flex: 1;
+	}
+}
+#search > label{
+	display: none;
+}
+.sub-menu-row{
+	position: absolute;
+	right: -20em;
+	top: $top-bar-height;
+	margin-top: $top-bar-top-spacing;
+	z-index: 5;
+	@extend .flex-container;
+	transition: all 0.2s ease-in-out;
+}
+.sub-menu-row.active{
+	position: absolute;
+	right: 0;
+	top: $top-bar-height;
+	margin-top: $top-bar-top-spacing;
+	z-index: 5;
+	@extend .flex-container;
+	transition: all 0.2s ease-in-out;
+}
+.sub-menu-container{
+	border-top: solid 1px #E0E0E0;
+	background: #fff;
+	color: #afafaf;
+	@extend .flex-right-justify-items;
+	width: 20em;
+}
+.sub-menu-container > .sub-menu-item{
+	cursor: pointer;
+	padding: 1em 2em;
+	font-size: 1.25em;
+	transition: all 0.2s ease-in-out;
+}
+.sub-menu-container > .sub-menu-item:hover{
+	background: $detroit-color-1;
+	color: #fff;
+	transition: all 0.2s ease-in-out;
+}
+.sub-menu-container > .sub-menu-item.active > span{
+	color: $detroit-color-1;
+}
+.sub-menu-container > .sub-menu-item.active:hover > span{
+	color: #FFD769;
+}
+.sub-menu-container > .sub-menu-item > span{
+	margin-right: .5em;
+}
+/*=================== content ===================*/
+#content{
+	width: 100%;
+	height: $content-height;
+}
+#neighborhood-info-container{
+	height: 100vh;
+	width: 55em;
+	@extend .flex-container;
+	position: absolute;
+	bottom: 0;
+	left: -57em;
+	background-color: $top-bar-font-color;
+	z-index: 5;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	transition: all 0.2s ease-in-out;
+}
+#neighborhood-info-container.active{
+	height: 100vh;
+	width: 55em;
+	@extend .flex-container;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: $top-bar-font-color;
+	z-index: 5;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	transition: all 0.2s ease-in-out;
+}
+@media all and (max-width: 799px) {
+	#neighborhood-info-container{
+		max-width: 90%;
+	}
+}
+.info-card{
+	position: relative;
+	width: 100%;
+}
+#info-card-hide-btn{
+	cursor: pointer;
+	position: absolute;
+	top: calc((100% - 6em)/2);
+	right: -1.5em;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 3em 4em 3em 0;
+	border-color: transparent #EB002B transparent transparent;
+	transition: all 0.2s ease-in-out;
+}
+#info-card-hide-btn > span{
+	color: #fff;
+	font-size: 1.25em;
+	position: relative;
+	top: -.5em;
+	right: -1.5em;
+	transition: all 0.2s ease-in-out;
+}
+#info-card-hide-btn:hover{
+	border-width: 3em 5em 3em 0;
+	transition: all 0.2s ease-in-out;
+}
+#info-card-hide-btn:hover > span{
+	right: -2em;
+	transition: all 0.2s ease-in-out;
+}
+.info-card-row{
+	@extend .flex-container;
+	width: 100%;
+	padding: .5em 1em;
+	font-size: 1.5em;
+}
+.info-card-row.near-neighborhoods > span.near-neighborhoods-list > a, .info-card-row.corresponding-districts > span.districts-list > a{
+	text-decoration: none;
+	line-height: 2em;
+	padding: .2em;
+	background: #A1D0F6;
+	transition: all 0.2s ease-in-out;
+}
+.info-card-row.near-neighborhoods > span.near-neighborhoods-list > a.more-neighborhoods-btn{
+	background: #EB002B;
+	color: #fff;
+	transition: all 0.2s ease-in-out;
+}
+.info-card-row.near-neighborhoods > span.near-neighborhoods-list > a:hover, .info-card-row.corresponding-districts > span.districts-list > a:hover{
+	transition: all 0.2s ease-in-out;
+	background: #93BEE0;
+}
+.info-card-row.near-neighborhoods > span.near-neighborhoods-list > a.more-neighborhoods-btn:hover{
+	transition: all 0.2s ease-in-out;
+	border: 1px solid #EB002B;
+	background: #fff;
+	color: #EB002B;
+}
+.info-card-row.four-squares{
+	max-width: 35em;
+	@extend .flex-conteiner-wrap;
+	@extend .flex-center-justify-items;
+	@extend .flex-align-items-end;
+	@extend .flex-stretch-content;
+}
+.info-card-row > h4{
+	text-align: center;
+	width: 100%;
+}
+.info-card-row.video{
+	padding: 0;
+}
+.video-wrap{
+	height: 16em;
+	width: 100%;
+	margin: auto;
+}
+#neighborhood-name{
+	margin: 0;
+}
+.info-card-row > .metric-box{
+	color: #fff;
+	text-align: center;
+	width: 8em;
+	height: 7em;
+	background: $detroit-color-1;
+	padding: .25em;
+	margin-right: .2em;
+	margin-bottom: .2em;
+}
+.info-card-row > .metric-box > img{
+	width: 2em;
+	height: 2em;
+}
+.info-card-row > .metric-box > h5{
+	font-size: .75em;
+}
+.info-card-row > .metric-box > span{
+	font-size: 1em;
+}
+#learn-more-btn{
+	transition: all 0.2s ease-in-out;
+	height: 2.5em;
+	padding: .5em;
+	background: #EB002B;
+	color: #fff;
+	cursor: pointer;
+	border: 0;
+}
+#learn-more-btn:hover{
+	transition: all 0.2s ease-in-out;
+	border: 1px solid #EB002B;
+	background: #fff;
+	color: #EB002B;
+}
+.learn-more-btn-space-mover{
+	max-width: calc((35em - 24.8em)/2);
+}
+@media all and (max-height: 510) {
+	// .video-wrap, .neighborhood-summary{
+	// 	max-width: 90%;
+	// }
+	// .learn-more-btn-space-mover{
+	// 	width: 2em;
+	// }
+	// .learn-more-btn-space-move.left{
+	// 	max-width: calc((100% - 24em)/2);
+	// }
+	// .info-card-row.four-squares{
+	// 	max-width: 100%;
+	// }
+	.info-card-row > .metric-box{
+		display: none;
+	}
+}
+/*=================== modules ===================*/
+.full-width-flex-container{
+	width: 100%;
+	display: flex;
+	margin-bottom: 3em;
+}
+.flex-container{
+	display: flex;
+}
+.flex-stretch-content{
+	align-items: stretch;
+}
+.flex-align-items-end{
+	align-items: flex-end;
+}
+.flex-right-justify-items{
+	justify-content: flex-end;
+}
+.flex-center-justify-items{
+	justify-content: center;
+}
+.flex-space-between-justify-items{
+	justify-content: space-between;
+}
+.flex-conteiner-wrap{
+	flex-wrap: wrap;
+}
+/*=================== surgical ==================*/
+.center-center-innercontent{
+	margin: auto;
+}
+.font-minus-75-percent{
+	font-size: 25%;
+}
+.font-minus-65-percent{
+	font-size: 35%;
+}
+.font-minus-60-percent{
+	font-size: 40%;
+}
+.font-minus-55-percent{
+	font-size: 45%;
+}
+.font-minus-50-percent{
+	font-size: 50%;
+}
+.font-minus-40-percent{
+	font-size: 60%;
+}
+.font-minus-30-percent{
+	font-size: 70%;
+}
+.font-minus-25-percent{
+	font-size: 75%;
+}
+.margin-bottom-1{
+	margin-bottom: 1em;
+}
+.margin-right-1{
+	margin-right: 1em;
+}

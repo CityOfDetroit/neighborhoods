@@ -1,0 +1,97 @@
+// Author: Edgar Montes
+// Department of Innovation Technology
+// Organization: City of Detroit
+/*================== imports ======================*/
+@import "neighborhoods-styles-0.1.scss";
+//================== top ==========================
+
+#top{
+  position: relative !important;
+  margin-bottom: 2em;
+}
+#content{
+  padding: 0 2em;
+}
+.point-of-interest{
+  @extend .full-width-flex-container;
+  @extend .flex-stretch-content;
+  background: $detroit-color-1;
+  position: relative;
+}
+@media all and (min-width: 800px) {
+  .point-of-interest{
+    flex-wrap: wrap;
+  }
+  .point-of-interest > .img-container{
+    flex: 1;
+    margin: auto;
+  }
+  .point-of-interest > .img-container > img{
+    max-width: 100%;
+    min-width: 50em;
+  }
+  .point-of-interest > .point-of-interest-description{
+    width: 20em;
+  }
+}
+.point-of-interest > .img-container{
+}
+.point-of-interest > .img-container > img{
+}
+.point-of-interest > .point-of-interest-description{
+  font-size: 1.5em;
+  color: $top-bar-font-color;
+  padding: 1em;
+}
+.point-of-interest > .point-of-interest-description > .title{
+  font-weight: bold;
+}
+.find-detroit-map{
+  width: 100%;
+  position: relative;
+}
+.find-detroit-map > .find-text{
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+.find-detroit-map > .find-text > a > h1{
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  padding: 20% 0 40% 0;
+}
+.find-detroit-map > img{
+  width: 100%;
+  opacity: .5;
+}
+footer{
+  font-size: 1.25em;
+  color: $top-bar-font-color;
+  background: $detroit-color-1;
+  width: calc(100% + 4em);
+  margin-left: -2em;
+}
+#footer-container{
+  @extend .flex-container;
+}
+.footer-section-item{
+  flex: 1;
+  padding: 1em;
+}
+.footer-section-item > .section-title{
+  font-weight: bold;
+}
+.footer-section-item > ul{
+  list-style-type: none;
+  padding-top: 1em;
+  padding-left: 0;
+}
+#footer-container > .footer-section-item.logo{
+  width: 5em;
+}
+#footer-container > .footer-section-item.logo > img{
+  width: 100%;
+}

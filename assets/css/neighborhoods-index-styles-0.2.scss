@@ -1,0 +1,244 @@
+// Author: Edgar Montes
+// Department of Innovation Technology
+// Organization: City of Detroit
+/*================== imports ======================*/
+@import "neighborhoods-styles-0.1.scss";
+//================== top ==========================
+#top{
+  top: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+#logo-3{
+  margin-top: -1em;
+  max-width: 30em;
+}
+#logo-3 > img{
+  width: 100%;
+}
+#search{
+  flex: 1;
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: $top-bar-font-color;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $top-bar-font-color;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $top-bar-font-color;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: $top-bar-font-color;
+  opacity: 1;
+}
+#address-search{
+  text-align: right;
+  background-color: transparent;
+  color: $top-bar-font-color;
+  border-bottom: 1px solid $top-bar-font-color;
+  height: 6vh;
+  padding-top: 4vh;
+}
+#address-search:focus{
+  outline: none;
+  -webkit-animation: input-line 0.3s ease forwards;
+}
+@-webkit-keyframes input-line {
+0%, 50% {width: 0%}
+100% { width: 100%}
+}
+#search-btn{
+  background-color: transparent;
+  color: $top-bar-font-color;
+}
+#search-btn > span{
+  top: 1.25em;
+  margin: 0;
+}
+#search-btn:hover{
+  color: $top-bar-font-color;
+}
+#navigation{
+  background-color: transparent;
+  color: $top-bar-font-color;
+}
+#center-content{
+  width: 100%;
+  height: 100vh;
+  @extend .flex-container;
+}
+#center-content > .content-box{
+  @extend .flex-container;
+  @extend .flex-center-justify-items;
+  @extend .flex-conteiner-wrap;
+  margin: auto;
+}
+#center-content > .content-box > article, #center-content > .content-box > a, #go-to-map{
+  width: 20em;
+  padding: 2em;
+  color: $top-bar-font-color;
+  font-size: 2em;
+}
+.content-box > .feature-neighborhood-content{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+60,0+100 */
+  background: -moz-linear-gradient(left, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 60%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 60%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+}
+.content-box > .feature-neighborhood-content > h3{
+  font-size: 2em;
+  margin: 0;
+}
+// .content-box > .feature-neighborhood-content, .content-box > a{
+//   width: 20em;
+//   height: 20em;
+// }
+#feature-neighborhood-link > button{
+  margin-top: 1em;
+  font-size: 1.25em;
+  padding: .5em;
+  border-radius: 0;
+}
+#go-to-map{
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+#go-to-map:hover > img{
+  transform: rotate(5deg);
+  transition: all 0.2s ease-in-out;
+  width: 150%;
+}
+#go-to-map > img{
+  position: absolute;;
+  top: -1.5em;
+  left: -2em;
+  transform: rotate(1.5deg);
+  transition: all 0.2s ease-in-out;
+  width: 150%;
+}
+#go-to-map > .message{
+  position: absolute;;
+  left: 0;
+  bottom: -2.75em;
+  font-size: .65em;
+  padding: .5em;
+  border-radius: 0;
+}
+#content{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+video#bgvid {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(../video/video.png) no-repeat;
+    background-size: cover;
+}
+@media screen and (max-device-width: 800px) {
+    html {
+         background: url(../video/video.png) #000 no-repeat center center fixed;
+    }
+    #bgvid {
+        display: none;
+    }
+}
+video#bgvid {
+    transition: 1s opacity;
+}
+.stopfade { opacity: .5; }
+#under-fold-content{
+  width: 100%;
+}
+#under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content{
+  background: $top-bar-font-color;
+}
+#under-fold-content > .grid-row:nth-child(odd) > .grid-item.text-content{
+  background: $detroit-color-1;
+  color: $top-bar-font-color;
+}
+.grid-row{
+  width: 100%;
+  @extend .flex-container;
+  @extend .flex-stretch-content;
+}
+.grid-row > .grid-item{
+  width: 50%;
+}
+@media all and (max-width: 850px) {
+  .grid-row{
+    flex-wrap: wrap;
+  }
+  .grid-row > .grid-item{
+    width: 100%;
+  }
+  #under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content{
+    order: 2;
+  }
+}
+.grid-row > .grid-item.text-content{
+  @extend .flex-container;
+}
+.grid-item.text-content > .content-box{
+  padding: 1em 2em;
+  margin: auto;
+}
+.grid-item.text-content > .content-box{
+  font-size: 2em;
+}
+.grid-row > .grid-item > img{
+  width: 100%;
+}
+footer{
+  padding: 2em;
+  font-size: 1.25em;
+  color: $top-bar-font-color;
+  background: $detroit-color-1;
+  width: 100%;
+}
+#footer-container{
+  @extend .flex-container;
+}
+.footer-section-item{
+  flex: 1;
+  padding: 1em;
+}
+.footer-section-item > .section-title{
+  font-weight: bold;
+}
+.footer-section-item > ul{
+  list-style-type: none;
+  padding-top: 1em;
+  padding-left: 0;
+}
+.footer-section-item > ul > li{
+  margin-bottom: .5em;
+}
+.footer-section-item > ul > li > a, .footer-section-item > ul > li > a:hover, .footer-section-item > ul > li > a:visited{
+  color: $top-bar-font-color;
+}
+#footer-container > a > .logo{
+  max-width: 10em;
+}
+#footer-container > a >.logo > img{
+  max-width: 100%;
+}

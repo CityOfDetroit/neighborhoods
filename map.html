@@ -1,0 +1,145 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Find Your Detroit</title>
+  <meta name="description" content="Find Your Detroit is an initiative to increase awareness in citizens about their own neighborhoods, as well as to share the beauty that each neighborhood has to offer to visitors.">
+  <meta name="author" content="Edgar Montes">
+
+  <link rel="stylesheet" href="assets/css/bootstrap-3.3.7/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css" />
+  <link rel="stylesheet" href="assets/css/map-styles.css" />
+  <link rel="stylesheet" href="assets/css/menu-styles.css" />
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="assets/css/neighborhoods-styles-0.1.css">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <main>
+    <section id="top">
+      <section id="top-container">
+        <!-- <a href="index.html">
+          <article id="logo">
+            <img src="assets/img/Logo-Transparent-White.png" alt="City of Detroit">
+          </article>
+        </a>
+        <a href="index.html">
+          <article id="site-title">
+            <h1><span>FIND YOUR</span> DETROIT</h1>
+          </article>
+        </a> -->
+        <a href="index.html"><article id="logo-2">
+          <img src="assets/img/DD_logo1.png" alt="Find your Detroit">
+        </article></a>
+        <div id="spacing-title-search"></div>
+        <article id="search">
+          <input id="address-search" type="text" placeholder="Find your neighborhood">
+          <label for="address-search">Find your neighborhood</label>
+        </article>
+        <article id="search-btn">
+          <span class="glyphicon glyphicon-search"></span>
+        </article>
+        <article id="navigation">
+          <nav class="menu-container">
+            <input id="click" name="exit" type="checkbox" />
+            <label for="click">
+              <span class="burger"></span>
+              <span class="menu">Menu</span>
+            </label>
+          </nav>
+        </article>
+      </section>
+    </section>
+    <section class="sub-menu-row">
+      <nav class="sub-menu-container">
+        <article id="display-schools-btn" class="sub-menu-item">
+          <span class="glyphicon glyphicon-education"></span> SCHOOLS/LIBRARIES
+        </article>
+        <!-- <article id="display-bike-routes-btn" class="sub-menu-item">
+          <span class="glyphicon glyphicon-road"></span> BYCICLE LANES
+        </article> -->
+        <article id="display-restaurants-btn" class="sub-menu-item">
+          <span class="glyphicon glyphicon-cutlery"></span> RESTAURANS/BARS
+        </article>
+        <article id="display-parks-btn" class="sub-menu-item">
+          <span class="glyphicon glyphicon-tree-deciduous"></span> PARKS
+        </article>
+        <article id="display-historic-btn" class="sub-menu-item">
+          <span class="glyphicon glyphicon-time"></span> HISTORIC DISTRICTS
+        </article>
+      </nav>
+    </section>
+    <section id="content">
+      <div id="map" class="map"></div>
+    </section>
+    <section id="neighborhood-info-container" class="hidden">
+      <section class="info-card">
+        <article id="info-card-hide-btn" onclick="card1.changeDisplay(card1)">
+          <span class="glyphicon glyphicon-remove"></span>
+        </article>
+        <article class="info-card-row video">
+          <div class="video-wrap">
+            
+            <!-- <video width="100%" height="100%" controls="true" loop="true" poster="http://www.detroitmi.gov/Portals/0/Images/Police/recruitment-video-2.jpg">
+              <source src="https://www.youtube.com/watch?v=B1QVshbEIG4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video> -->
+          </div>
+        </article>
+        <article class="info-card-row">
+          <h4 id="neighborhood-name">BAGLEY</h4>
+        </article>
+        <article class="info-card-row">
+          <span class="neighborhood-summary"></span>
+        </article>
+        <article class="info-card-row near-neighborhoods">
+          <span><strong><span id="card-type"></span> Neighborhoods:</strong> </span>
+          <span class="near-neighborhoods-list">
+            <a href="#">Blackstone Park</a>, <a href="#">Fitzgerald</a>, <a href="#">Greenwich</a>, <a href="#">Harmony Village</a>, <a href="#">Pembroke</a>.
+          </span>
+        </article>
+        <section class="info-card-row four-squares">
+          <article class="learn-more-btn-space-mover left"></article>
+          <article class='metric-box'>
+            <h5>AVG. HOUSEHOLD INCOME</h5>
+            <img src="assets/img/money-wht.png" alt="household income"/>
+            <br><span id="household-income"></span>
+          </article>
+          <article class='metric-box'>
+            <h5>GARBAGE PICK UP DAY</h5>
+            <img src="assets/img/garbage-wht.png" alt="garbage pick up day"/>
+            <br><span id="garbage-pickup-day"></span>
+          </article>
+          <article class='metric-box'>
+            <h5>ASSOCIATIONS & BLOCK CLUBS</h5>
+            <img src="assets/img/club-wht.png" alt="block clubs"/>
+            <br><span id="block-clubs"></span>
+          </article>
+          <article class='metric-box'>
+            <h5>CURRENT RESIDENTS</h5>
+            <img src="assets/img/people_wht.png" alt="residents"/>
+            <br><span id="residents"></span>
+          </article>
+          <div class="learn-more-btn-space-mover"></div>
+          <button id="learn-more-btn" onclick="card1.openNewPage(card1)">LEARN MORE</button>
+        </section>
+      </section>
+    </section>
+  </main>
+  <script src="assets/js/dexter_map_script.js"></script>
+  <script src='assets/js/menu_functionality.js'></script>
+  <script src='assets/js/information_card_functions.js'></script>
+  <script src='assets/js/map_section_click_module.js'></script>
+  <script src='assets/js/event_listeners.js'></script>
+</body>
+</html>
+
+<!-- sample video -->
+<!-- <video class="embed-responsive-item" width="1920" height="1080" controls="true" loop="true" poster="http://www.detroitmi.gov/Portals/0/Images/Police/recruitment-video-2.jpg">
+    <source src="http://www.detroitmi.gov/portals/0/Media/Police/Detroit-Police-Recruiting.mp4" type="video/mp4">
+  Your browser does not support the video tag. </video> -->

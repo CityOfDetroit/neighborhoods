@@ -1,0 +1,531 @@
+// Author: Edgar Montes
+// Department of Innovation Technology
+// Organization: City of Detroit
+// =================== imports ==================
+@import "neighborhoods-styles-0.1.scss";
+/*================== variables =================*/
+$detroit-color-1-light: lighten($detroit-color-1,50%);
+$top-bar-color: none;
+$top-bar-font-color: #fff;
+$top-bar-height: 8vh;
+$top-bar-top-spacing: 1em;
+$content-height: 100vh;
+$neighborhood-info-height: 80vh;
+$width-break-point-1: 800;
+$width-break-point-2: 1024px;
+$width-break-point-3: 1224px;
+$width-break-point-4: 1680px;
+// ==================== tags ====================
+main{
+	overflow-y: scroll;
+}
+/*======================= top ==================*/
+#top{
+	position: relative;
+}
+#back-top{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 5;
+}
+#logo{
+	background: $detroit-color-1;
+	@extend .flex-container;
+	max-width: 8em;
+}
+#logo > img{
+	max-height: $top-bar-height;
+}
+#logo-3{
+  margin-top: -2.5em;
+  max-width: 30em;
+}
+#logo-3 > img{
+  width: 100%;
+}
+#search{
+  flex: 1;
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: $detroit-color-1;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $detroit-color-1;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $detroit-color-1;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: $detroit-color-1;
+  opacity: 1;
+}
+#address-search{
+  text-align: right;
+  background-color: transparent;
+  color: $detroit-color-1;
+  border-bottom: 1px solid $detroit-color-1;
+  height: 6vh;
+  padding-top: 4vh;
+}
+#address-search:focus{
+  outline: none;
+  -webkit-animation: input-line 0.3s ease forwards;
+}
+#search-btn{
+  background-color: transparent;
+}
+#search-btn > span{
+  top: -1.5em;
+  margin: 0;
+}
+@-webkit-keyframes input-line {
+0%, 50% {width: 0%}
+100% { width: 100%}
+}
+#site-title{
+	color: $top-bar-font-color;
+	background: $detroit-color-1;
+	@extend .flex-container;
+	height: $top-bar-height;
+	padding: 0 1em 0 0;
+	max-width: 15em;
+	margin: 0;
+}
+#site-title > h3{
+	font-size: 2.5vh;
+	@extend .center-center-innercontent;
+}
+#site-title > h3 > span{
+	@extend .font-minus-40-percent;
+}
+.top-nav-item{
+	@extend .flex-container;
+	cursor: pointer;
+	font-size: 2em;
+	color: #000;
+}
+.top-nav-item:hover{
+	background: $detroit-color-1;
+	color: $top-bar-font-color;
+}
+.top-nav-item > span{
+	margin: auto;
+	padding: 1em;
+	font-size: 1.25vh;
+}
+#spacing-title-search{
+	flex: 1;
+}
+#navigation{
+	width: $top-bar-height;
+	height: $top-bar-height;
+	background: #fff;
+	margin-right: 2em;
+}
+// ==================== Content =======================
+#content{
+	padding: 0 2em;
+}
+.content-row{
+	@extend .full-width-flex-container;
+	@extend .flex-stretch-content;
+	@extend .flex-conteiner-wrap;
+	margin-bottom: 0;
+}
+.section-headers{
+	background: $detroit-color-1;
+	color: $top-bar-font-color;
+	padding: 1em .5em;
+}
+.content-row > .four-squares-section{
+	background: $detroit-color-1;
+	color: $top-bar-font-color;
+}
+@media all and (max-width: 799px) {
+	.content-row > .left-content{
+		width: 100%;
+		margin-bottom: 1em;
+	}
+	.content-row > .four-squares-section{
+		width: 100%;
+		margin-bottom: 1em;
+	}
+}
+@media all and (min-width: 800px) {
+	.content-row > .left-content{
+		width: calc(100% - 35em);
+		padding-right: 1em;
+	}
+	.content-row > .four-squares-section{
+		width: 35em;
+	}
+}
+// ====================== description ============================
+.description-section > .description-images{
+	margin-bottom: 1em;
+}
+.description-section > .description-images > a > img:first-child, .description-section > .description-images > img:first-child{
+	max-width: 100%;
+}
+.description-section > .description-images > img:nth-child(2), .description-section > .description-images > img:nth-child(3){
+	display: none;
+}
+@media all and (min-width: $width-break-point-2) {
+	.description-section > .description-images > img:first-child, .description-section > .description-images > a > img:first-child, .description-section > .description-images > img:nth-child(2){
+		width: 49%;
+		display: inline;
+	}
+}
+@media all and (min-width: $width-break-point-4) {
+	.description-section > .description-images > img:first-child, .description-section > .description-images > a > img:first-child, .description-section > .description-images > img:nth-child(2), .description-section > .description-images > img:nth-child(3){
+		width: 33%;
+		display: inline;
+	}
+}
+.description-section > .description-text{
+	clear: both;
+	display: block;
+	font-size: 1.5em;
+}
+.near-neighborhoods, .neighborhood-districts{
+	font-size: 1.5em;
+	margin-top: 1em;
+}
+.four-squares-section > .single-block, .four-squares-section > .pair{
+	@extend .flex-container;
+	@extend .flex-conteiner-wrap;
+	margin: auto;
+}
+.four-squares-section > .pair.first-pair{
+	border-bottom: 1px solid #e7e7e7;
+}
+.four-squares-section > .pair.first-pair > .square-item:first-child{
+	border-right: 1px solid #e7e7e7;
+}
+.four-squares-section > .pair.second-pair > .square-item:first-child{
+	border-right: 1px solid #e7e7e7;
+}
+.four-squares-section > .single-block > .square-item{
+	padding: 2em;
+	margin: auto;
+	width: 100%;
+	max-width: 800px;
+}
+.four-squares-section > .pair > .square-item{
+	padding: 2em;
+	margin: auto;
+	text-align: center;
+	width: 50%;
+}
+.four-squares-section > .pair > .square-item > img{
+	float: none;
+	margin: 0;
+	width: 8em;
+}
+.four-squares-section > .pair > .square-item > h5{
+	clear: both;
+}
+.four-squares-section > .pair > .square-item > span{
+	font-size: 2.5em;
+}
+// ================== profiles ==============================
+.profile-container{
+	@extend .flex-container;
+	@extend .flex-conteiner-wrap;
+	width: 100%;
+}
+.profile-container > .profile-item{
+	width: 100%;
+}
+@media all and (min-width: $width-break-point-2){
+	.profile-container > .profile-item{
+		width: calc((100% - 2em)/2);
+	}
+	.profile-item:first-child{
+		margin-right: 2em;
+	}
+}
+// @media all and (min-width: $width-break-point-3) {
+// 	.profile-container > .profile-item{
+// 		width: calc((100% - 6em)/3);
+// 	}
+// }
+// @media all and (min-width: $width-break-point-4) {
+// 	.profile-container > .profile-item{
+// 		width: calc((100% - 8em)/4);
+// 	}
+// }
+.profile-item{
+	margin-bottom: 2em;
+	@extend .flex-container;
+	@extend .flex-conteiner-wrap;
+}
+.profile-item > .district-neighborhoods-list{
+	width: 100%;
+	font-size: 1.5em;
+	list-style-type: none;
+	padding: 0;
+}
+.profile-item > .district-neighborhoods-list > li{
+	padding: .5em 1em;
+	border: 1px solid $detroit-color-1;
+}
+.profile-item > .district-neighborhoods-list > li > a:hover{
+	font-weight: bold;
+}
+.profile-item > .district-neighborhoods-list > li:not(:last-child){
+	border-bottom: none;
+}
+.profile-item > .district-neighborhoods-list > li > a, .profile-item > ul > li > a:hover, .profile-item > ul > li > a:visited{
+	text-decoration: none;
+	color: $detroit-color-1;
+}
+.profile-item > .district-neighborhoods-list > li > a > img{
+	width: 3em;
+}
+.profile-item > .personal-facts{
+	font-size: 1.25em;
+}
+.profile-item > .person-info{
+	position: relative;
+	width: 17em;
+}
+.profile-item > .person-info > img{
+	width: 8em;
+	border-radius: 50%;
+	float: none;
+	border: 4px solid $detroit-color-1;
+}
+.profile-item > .person-info > p{
+	font-size: 2em;
+	position: absolute;
+	top: 0;
+	left: 5em;
+	background: $detroit-color-1;
+	color: $top-bar-font-color;
+	margin: 0 !important;
+	padding: .2em .5em;
+}
+.profile-item > .person-info > .triangle{
+	position: absolute;
+	top: 1.25em;
+	left: 8em;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 2em 2em 2em 0;
+	border-color: transparent $detroit-color-1 transparent transparent;
+}
+.profile-item > .person-info > p > .person-neighborhood{
+	@extend .font-minus-40-percent;
+	position: relative;
+	top: -1em;
+}
+.profile-item > .person-story{
+	margin-top: .5em;
+	font-size: 1.5em;
+	width: 100%;
+}
+// ================= associations ===========================
+.associations-clubs-container{
+	@extend .flex-container;
+	@extend .flex-conteiner-wrap;
+}
+.associations-clubs-container > .association-club-item{
+	font-size: 1.5em;
+	padding-right: 2em;
+	padding-bottom: 2em;
+}
+.association-club-item-social-media{
+	@extend .flex-container;
+}
+.association-club-item-social-media > a > img{
+	width: 3em;
+}
+// ======================= events =====================
+.event-container{
+	width: 100%;
+}
+.event-container > .event-list{
+	@extend .flex-container;
+	@extend .flex-center-justify-items;
+}
+.event-list > .event-item{
+	margin-right: 2em;
+	width: 35em;
+}
+.event-list > .event-item > .event-banner{
+	width: 100%;
+	height: 20em;
+	overflow: hidden;
+}
+.event-list > .event-item > .event-banner > img{
+	max-width: 100%;
+}
+.event-item > .event-details{
+	@extend .flex-container;
+}
+.event-details > .event-date{
+	padding-right: .5em;
+	font-size: 4em;
+	font-weight: bold;
+	text-align: center;
+}
+.event-details > .event-date > span{
+	position: relative;
+}
+.event-date > span.event-month{
+	@extend .font-minus-50-percent;
+	top: -1.5em;
+}
+.event-date > span.event-year{
+	@extend .font-minus-55-percent;
+	top: -3.5em;
+}
+.event-description{
+	padding-top: 1em;
+}
+.event-description > .event-name{
+	cursor: pointer;
+	color: $detroit-color-1;
+	font-size: 2em;
+	font-weight: bold;
+}
+.event-description > .event-text{
+	font-size: 1.5em;
+}
+@media all and (max-width: 799px) {
+	.event-list > .event-item{
+		width: 100%;
+	}
+	.event-container > .event-list{
+		flex-wrap: wrap;
+	}
+}
+// ================ footer =======================
+footer{
+  padding: 2em;
+  font-size: 1.25em;
+  color: $top-bar-font-color;
+  background: $detroit-color-1;
+  width: calc(100% + 4em);
+	margin-left: -2em;
+}
+#footer-container{
+  @extend .flex-container;
+}
+.footer-section-item{
+  flex: 1;
+  padding: 1em;
+}
+.footer-section-item > .section-title{
+  font-weight: bold;
+}
+.footer-section-item > ul{
+  list-style-type: none;
+  padding-top: 1em;
+  padding-left: 0;
+}
+.footer-section-item > ul > li{
+  margin-bottom: .5em;
+}
+.footer-section-item > ul > li > a, .footer-section-item > ul > li > a:hover, .footer-section-item > ul > li > a:visited{
+  color: $top-bar-font-color;
+}
+#footer-container > a > .logo{
+  max-width: 10em;
+}
+#footer-container > a >.logo > img{
+  max-width: 100%;
+}
+/*=================== modules ===================*/
+.full-width-flex-container{
+	width: 100%;
+}
+.event-container > .event-list{
+	@extend .flex-container;
+	@extend .flex-center-justify-items;
+}
+.event-list > .event-item{
+	margin-right: 2em;
+	width: 35em;
+}
+.event-list > .event-item > .event-banner{
+	width: 100%;
+	height: 20em;
+	overflow: hidden;
+}
+.event-list > .event-item > .event-banner > img{
+	max-width: 100%;
+}
+.event-item > .event-details{
+	@extend .flex-container;
+}
+.event-details > .event-date{
+	padding-right: .5em;
+	font-size: 4em;
+	font-weight: bold;
+	text-align: center;
+}
+.event-details > .event-date > span{
+	position: relative;
+}
+/*=================== surgical ==================*/
+.order1{
+	order: 1;
+}
+.order2{
+	order: 2;
+}
+.order3{
+	order: 3;
+}
+.order4{
+	order: 4;
+}
+.order5{
+	order: 5;
+}
+.order6{
+	order: 6;
+}
+.center-center-innercontent{
+	margin: auto;
+}
+.font-minus-75-percent{
+	font-size: 25%;
+}
+.font-minus-65-percent{
+	font-size: 35%;
+}
+.font-minus-60-percent{
+	font-size: 40%;
+}
+.font-minus-55-percent{
+	font-size: 45%;
+}
+.font-minus-50-percent{
+	font-size: 50%;
+}
+.event-date > span.event-month{
+	@extend .font-minus-50-percent;
+	top: -1.5em;
+}
+.event-date > span.event-year{
+	@extend .font-minus-55-percent;
+	top: -3.5em;
+}
+.event-description{
+	padding-top: 1em;
+}
+.event-description > .event-name{
+	cursor: pointer;
+	color: $detroit-color-1;
+	font-size: 2em;
+	font-weight: bold;
+}
+.event-description > .event-text{
+	font-size: 1.5em;
+}
