@@ -99,11 +99,6 @@ map.on('load', function (e) {
         data:schools
     });
 
-    map.addSource('bikes', {
-        type: 'geojson',
-        data:bikes
-    });
-
     map.addSource('parks', {
         type: 'geojson',
         data:parks

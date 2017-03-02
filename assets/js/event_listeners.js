@@ -32,7 +32,7 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
   card1.setCard(bagleObj);
   console.log(card1);
   console.log(e.innerHTML);
-  $.getJSON('http://gis.detroitmi.gov/arcgis/rest/services/WebDev/Neighborhoods/MapServer/0/query?where=&text='+ e.innerHTML +'&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=pjson', function( data ) {
+  $.getJSON('https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Neighborhoods/MapServer/0/query?where=&text='+ e.innerHTML +'&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=pjson', function( data ) {
     console.log(data);
     let llb = new mapboxgl.LngLatBounds(data.features[0].geometry.rings[0]);
     let center = llb.getCenter();
@@ -59,7 +59,7 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
 var districtTwoMoveThere = function districtTwoMoveThere(e) {
   card1.setCard(district2Obj);
   console.log(e.innerHTML.split(' '));
-  $.getJSON('http://gis.detroitmi.gov/arcgis/rest/services/WebDev/Council_Districts/MapServer/0/query?where=&text='+ e.innerHTML.split(' ')[0] + '+' + e.innerHTML.split(' ')[1] +'&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=pjson', function( data ) {
+  $.getJSON('https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/council_district/MapServer/0/query?where=&text='+ e.innerHTML.split(' ')[0] + '+' + e.innerHTML.split(' ')[1] +'&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=pjson', function( data ) {
     console.log(data);
     let llb = new mapboxgl.LngLatBounds(data.features[0].geometry.rings[0]);
     let center = llb.getCenter();
