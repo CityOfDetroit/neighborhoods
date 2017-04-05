@@ -4,6 +4,9 @@
 /*================== imports ======================*/
 @import "neighborhoods-styles-0.1.scss";
 //================== top ==========================
+h1,h2,h3,h4,h5{
+	font-weight: bold;
+}
 #top{
   top: 0;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
@@ -83,6 +86,28 @@
   padding: 2em;
   color: $top-bar-font-color;
   font-size: 2em;
+}
+.home-story-btn{
+  cursor: pointer;
+  margin: 0;
+  position: absolute;
+  top: calc((100% - 3.125em)/2);
+  padding: 0 .25em;
+  font-size: 6em;
+  background-color: rgba(255,255,255,.65);
+  transition: all .2s ease-in-out;
+}
+.home-story-btn:hover{
+  transition: all .2s ease-in-out;
+  padding: 0 .3em;
+  background-color: rgba(255,255,255,.75);
+}
+#swipe-right-btn{
+  right: 0;
+}
+.home-story-btn > span{
+  position: relative;
+  top: -.1em;
 }
 .content-box > .feature-neighborhood-content{
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+60,0+100 */
@@ -207,6 +232,48 @@ video#bgvid {
 }
 .grid-row > .grid-item > img{
   width: 100%;
+}
+.grid-row.events > .grid-item.event{
+  position: relative;
+}
+.grid-item.event > .event-details{
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  color: $detroit-color-1;
+  background-color: rgba(255,255,255,.5);
+  padding: 0 1em;
+  width: 100%;
+	@extend .flex-container;
+}
+.event-details > .event-date{
+  height: 3em;
+	padding-right: .5em;
+	font-size: 4em;
+	font-weight: bold;
+	text-align: center;
+}
+.event-details > .event-date > span{
+	position: relative;
+}
+.event-date > span.event-month{
+	@extend .font-minus-50-percent;
+	top: -1.5em;
+}
+.event-date > span.event-year{
+	@extend .font-minus-55-percent;
+	top: -3.5em;
+}
+.event-description{
+	padding-top: 1em;
+}
+.event-description > .event-name{
+	cursor: pointer;
+	font-size: 2em;
+	font-weight: bold;
+}
+.event-description > .event-text{
+	font-size: 1.5em;
 }
 footer{
   padding: 2em;

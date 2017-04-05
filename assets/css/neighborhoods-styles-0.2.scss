@@ -49,11 +49,10 @@ h1,h2,h3,h4,h5{
 	@extend .flex-stretch-content;
 }
 #logo-2{
-  margin-top: -2.5em;
   max-width: 30em;
 }
 #logo-2 > img{
-  width: 100%;
+	height: 12vh;
 }
 #search{
   width: 30em;

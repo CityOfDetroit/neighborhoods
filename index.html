@@ -7,6 +7,11 @@
   <title>Find Your Detroit</title>
   <meta name="description" content="Find Your Detroit is an initiative to increase awareness in citizens about their own neighborhoods, as well as to share the beauty that each neighborhood has to offer to visitors.">
   <meta name="author" content="Edgar Montes">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="assets/js/moment.min.js"></script>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.js"></script>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.2.0/fullcalendar.print.css">
   <link rel="stylesheet" href="assets/css/bootstrap-3.3.7/dist/css/bootstrap.css">
   <link rel="stylesheet" href="assets/css/menu-styles.css" />
   <link rel="stylesheet" href="assets/css/neighborhoods-index-styles-0.2.css">
@@ -17,19 +22,11 @@
 
 <body>
   <main>
+    <article id="swipe-left-btn" class="home-story-btn"><span>&lsaquo;</span></article>
+    <article id="swipe-right-btn" class="home-story-btn"><span>&rsaquo;</span></article>
     <article id="back-top-btn" style="position: fixed; right:2em; bottom:2em;cursor:pointer;background: rgba(255,255,255,.5); padding: 1em;font-size:1.25em;"><span class="glyphicon glyphicon-triangle-top"></span> TOP</article>
     <section id="top">
       <section id="top-container">
-        <!-- <a href="index.html">
-          <article id="logo">
-            <img src="assets/img/Logo-Transparent-White.png" alt="City of Detroit">
-          </article>
-        </a>
-        <a href="index.html">
-          <article id="site-title">
-            <h1><span>FIND YOUR</span> DETROIT</h1>
-          </article>
-        </a> -->
         <a href="#"><article id="logo-3">
           <img src="assets/img/Logo/Logo1.png" alt="This is Detroit">
         </article></a>
@@ -55,16 +52,19 @@
     <section class="sub-menu-row">
       <nav class="sub-menu-container">
         <article class="sub-menu-item" data-anchor="community-program">
-          COMMUNITY
+          BUY A HOME
         </article>
         <article class="sub-menu-item" data-anchor="night-out">
-          NIGHT OUT
+          TRASH AND RECYCLE
         </article>
         <article class="sub-menu-item" data-anchor="shopping">
-          SHOPPING
+          RENT IN DETROIT
         </article>
         <article class="sub-menu-item" data-anchor="rent">
-          RENT
+          START A BUSINESS
+        </article>
+        <article class="sub-menu-item" data-anchor="events">
+          EVENTS
         </article>
       </nav>
     </section>
@@ -91,49 +91,99 @@
   <section id="under-fold-content">
     <div class="grid-row community-program">
       <div class="grid-item">
-        <img src="assets/img/garden_sq.png" alt="community gardens">
+        <img src="assets/img/homes.png" alt="Buying and owning a home">
       </div>
       <div class="grid-item text-content">
         <div class="content-box">
-          <h3>Great Community Programs</h3>
+          <p><strong>Guide:</strong></p>
+          <h3>BUY AND OWN A HOME</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi neque magna, facilisis eleifend ligula sit amet, sodales convallis elit. Nullam molestie nibh non massa commodo, a lobortis ante convallis. Morbi posuere lectus in diam tincidunt vestibulum. Suspendisse id nunc ornare, porttitor massa eget, rhoncus diam.</p>
+          <ul>
+            <li><a href="#">COSTS</a></li>
+            <li><a href="#">TAXES</a></li>
+            <li><a href="#">AFFORDABLE HOUSING</a></li>
+            <li><a href="#">MORE</a></li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="grid-row night-out">
       <div class="grid-item text-content">
         <div class="content-box">
-          <h3>Perfect Night Out</h3>
+          <p><strong>Guide:</strong></p>
+          <h3>TRASH AND RECYCLING</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi neque magna, facilisis eleifend ligula sit amet, sodales convallis elit. Nullam molestie nibh non massa commodo, a lobortis ante convallis. Morbi posuere lectus in diam tincidunt vestibulum. Suspendisse id nunc ornare, porttitor massa eget, rhoncus diam.</p>
+          <ul>
+            <li><a href="#">TIPS</a></li>
+            <li><a href="#">REQUESTS</a></li>
+            <li><a href="#">TRASH DAY</a></li>
+            <li><a href="#">MORE</a></li>
+          </ul>
         </div>
       </div>
       <div class="grid-item">
-        <img src="assets/img/kuzzos.png" alt="kuzzos">
+        <img src="assets/img/trash_recycle.png" alt="Trash and recycling">
       </div>
     </div>
     <div class="grid-row shopping">
       <div class="grid-item">
-        <img src="assets/img/eastern_market.png" alt="eastern market">
+        <img src="assets/img/buy_rent.png" alt="Renting in Detroit">
       </div>
       <div class="grid-item text-content">
         <div class="content-box">
-          <h3>OUT SHOPPING</h3>
+          <p><strong>Guide:</strong></p>
+          <h3>RENTING IN DETROIT</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi neque magna, facilisis eleifend ligula sit amet, sodales convallis elit. Nullam molestie nibh non massa commodo, a lobortis ante convallis. Morbi posuere lectus in diam tincidunt vestibulum. Suspendisse id nunc ornare, porttitor massa eget, rhoncus diam.</p>
+          <ul>
+            <li><a href="#">LEASES AND AGREEMENTS</a></li>
+            <li><a href="#">DEPOSITS AND FEES</a></li>
+            <li><a href="#">INSURANCE</a></li>
+            <li><a href="#">MORE</a></li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="grid-row rent">
       <div class="grid-item text-content">
         <div class="content-box">
-          <h3>RENT IN DETROIT</h3>
+          <p><strong>Guide:</strong></p>
+          <h3>START A BUSINESS</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi neque magna, facilisis eleifend ligula sit amet, sodales convallis elit. Nullam molestie nibh non massa commodo, a lobortis ante convallis. Morbi posuere lectus in diam tincidunt vestibulum. Suspendisse id nunc ornare, porttitor massa eget, rhoncus diam.</p>
+          <ul>
+            <li><a href="#">REGISTER A BUSINESS</a></li>
+            <li><a href="#">FINANCING AND ASSISTANCE</a></li>
+            <li><a href="#">LICENSES AND FORMS</a></li>
+            <li><a href="#">MORE</a></li>
+          </ul>
         </div>
       </div>
       <div class="grid-item">
-        <img src="assets/img/midtown.png" alt="housing">
+        <img src="assets/img/eastern_market.png" alt="Start a business">
       </div>
     </div>
   </section>
+  <div class="grid-row events">
+    <div class="grid-item event">
+      <img src="assets/img/stpparadedetroit.jpg" alt="events">
+      <section class="event-details">
+        <article class="event-date">
+          <span class="event-day">12</span>
+          <br><span class="event-month">JAN</span>
+          <br><span class="event-year">2017</span>
+        </article>
+        <article class="event-description">
+          <span class="event-name">ST. PATRICK'S PARADE</span>
+          <br><span class="event-text">Something nice about the St. Patrick's Parade like, lots of green.</span>
+        </article>
+      </section>
+    </div>
+    <div class="grid-item text-content">
+      <div class="content-box">
+        <article id="calendar"></article>
+      </div>
+    </div>
+  </div>
+</section>
   <footer>
     <section id="footer-container">
       <article class="footer-section-item">
@@ -188,5 +238,20 @@
   </footer>
   <script src='assets/js/menu_functionality.js'></script>
   <script src='assets/js/random_home.js'></script>
+  <script>
+    var today = moment().format();
+    $('#calendar').fullCalendar({
+      header: {
+        left: 'prev,next',
+        center: 'title',
+        right: 'year'
+      },
+      defaultDate: today,
+      navLinks: false, // can click day/week names to navigate views
+      // businessHours: true, // display business hours
+      editable: true,
+      events: ''
+    });
+  </script>
 </body>
 </html>

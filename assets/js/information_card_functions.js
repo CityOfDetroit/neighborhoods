@@ -11,7 +11,7 @@ var informationCardModule = (function(){
     neighborhoods       : '',
     avgHouseholdIncome  : '',
     garbagePickupDay    : '',
-    blockClubs          : '',
+    parks               : '',
     residents           : '',
     openNewPage: function() {
       console.log(this.name);
@@ -55,7 +55,7 @@ var informationCardModule = (function(){
         (infoObj.properties.type === 'neighborhood') ? this.districts = infoObj.properties.districts : 0;
         this.avgHouseholdIncome = infoObj.properties.avgHouseholdIncome;
         this.garbagePickupDay = infoObj.properties.garbagePickupDay;
-        this.blockClubs = infoObj.properties.blockClubs;
+        this.parks = infoObj.properties.parks;
         this.residents = infoObj.properties.residents;
       }
     },
@@ -98,7 +98,7 @@ var informationCardModule = (function(){
     createFourSquareData: function () {
       document.getElementById('household-income').innerHTML = '$' + this.avgHouseholdIncome + 'k';
       document.getElementById('garbage-pickup-day').innerHTML = this.garbagePickupDay.toUpperCase();
-      document.getElementById('block-clubs').innerHTML = this.blockClubs;
+      document.getElementById('block-clubs').innerHTML = this.parks;
       document.getElementById('residents').innerHTML = this.residents;
     }
   };

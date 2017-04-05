@@ -25,12 +25,16 @@ var map = new mapboxgl.Map({
 var schools = "http://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/schools_libraries/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=5&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson";
 
 //add neighborhoods
-var neighborhoods = "https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Neighborhoods/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=5&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson";
+var neighborhoods = 'https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Neighborhoods/MapServer/1/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=2898&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson';
+
+var neighborhoods_labels = 'https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Neighborhoods/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=2898&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson';
+
+var councils = 'https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/council_district/MapServer/1/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=5&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson';
+
+var councils_labels = 'https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/council_district/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=5&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson';
 
 //add parks
 var parks = "https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Parks/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=5&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson";
-
-var councils = 'https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/council_district/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=5&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson';
 
 var historic = 'https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/national_historic_districts/MapServer/0/query?where=1%3D1&text=&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=5&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=geojson';
 
@@ -104,22 +108,24 @@ map.on('load', function (e) {
         data:parks
     });
 
-  // use council districts
-    map.addSource('council', {
-      type: 'geojson',
-      data: councils
-    });
-
     map.addSource('historic', {
       type: 'geojson',
       data: historic
     });
 
-    // add a fill layer
+    map.addSource('councils', {
+      type: 'geojson',
+      data: councils
+    });
+    map.addSource('councils_labels', {
+      type: 'geojson',
+      data: councils_labels
+    });
+    //add a fill layer
     map.addLayer({
       "id": "council-fill",
       "type": "fill",
-      "source": "council", maxzoom: 12,
+      "source": "councils", maxzoom: 12,
       "layout": {},
       "paint": {
         "fill-color": flatColorMap,
@@ -130,19 +136,36 @@ map.on('load', function (e) {
     map.addLayer({
       "id": "council-fills-hover",
       "type": "fill",
-      "source": "council", maxzoom: 12,
+      "source": "councils", maxzoom: 12,
       "layout": {},
       "paint": {
         "fill-color": popColorMap,
         "fill-opacity": 1
       },
-      "filter": ["==", "name", ""]
+      "filter": ["==", "districts", ""]
     });
 
+
+    map.addLayer({
+      'id': 'councils_labels',
+      'type': 'symbol',
+      'source': 'councils_labels', maxzoom: 12,
+      'layout': {
+        'text-field': 'District {districts}'
+      },
+      'paint': {
+        'text-color': 'black'
+
+      }
+    });
 // ================== neighborhoods =========================
     map.addSource('neighborhoods', {
       type: 'geojson',
       data: neighborhoods
+    });
+    map.addSource('neighborhoods_labels', {
+      type: 'geojson',
+      data: neighborhoods_labels
     });
 
     map.addLayer({
@@ -182,7 +205,7 @@ map.on('load', function (e) {
     map.addLayer({
       'id': 'neighborhoods-labels',
       'type': 'symbol',
-      'source': 'neighborhoods',
+      'source': 'neighborhoods_labels',
               'minzoom': 12,
       'layout': {
         'text-field': '{name}'
@@ -196,14 +219,13 @@ map.on('load', function (e) {
     map.addLayer({
       "id": "council-borders",
       "type": "line",
-      "source": "council",
+      "source": "councils",
       "layout": {},
       "paint": {
         "line-color": "white",
         "line-width": 3
       }
     });
-
 // When the user moves their mouse over the page, we look for features
 // at the mouse position (e.point) and within the states layer (states-fill).
 // If a feature is found, then we'll update the filter in the state-fills-hover
@@ -222,21 +244,21 @@ map.on("mousemove", function(e) {
   });
   map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
   if (features.length) {
-    map.setFilter("council-fills-hover", ["==", "name", features[0].properties.name]);
+    map.setFilter("council-fills-hover", ["==", "districts", features[0].properties.districts]);
     var feature = features[0];
 
     // Populate the popup and set its coordinates
     // based on the feature found.
-    console.log(feature);
-    if(feature.properties.name === 'District 2'){
-      districtPopup.setLngLat(map.unproject(e.point))
-          .setHTML('<h5>' + feature.properties.name + ' <span id="district-popup-img"><img src="assets/img/marygrove-logo-badge.png" alt="Marygrove"></img></span></h5>')
-          .addTo(map);
-    }else{
-      districtPopup.setLngLat(map.unproject(e.point))
-          .setHTML('<h5>' + feature.properties.name + ' <span id="district-popup-img"><img src="assets/img/new.png" alt="badge"></img></span></h5>')
-          .addTo(map);
-    }
+    // console.log(feature);
+    // if(feature.properties.districts === '2'){
+    //   districtPopup.setLngLat(map.unproject(e.point))
+    //       .setHTML('<h5>District ' + feature.properties.districts + ' <span id="district-popup-img"><img src="assets/img/marygrove-logo-badge.png" alt="Marygrove"></img></span></h5>')
+    //       .addTo(map);
+    // }else{
+    //   districtPopup.setLngLat(map.unproject(e.point))
+    //       .setHTML('<h5>District ' + feature.properties.districts + ' <span id="district-popup-img"><img src="assets/img/new.png" alt="badge"></img></span></h5>')
+    //       .addTo(map);
+    // }
   } else {
     features = map.queryRenderedFeatures(e.point, {
       layers: ["neighborhoods-fill"]

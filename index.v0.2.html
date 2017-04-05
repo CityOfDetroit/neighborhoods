@@ -67,17 +67,20 @@
         <article class="sub-menu-item" data-anchor="rent">
           RENT
         </article>
+        <article class="sub-menu-item" data-anchor="events">
+          EVENTS
+        </article>
       </nav>
     </section>
     <section id="content">
-      <video playsinline autoplay muted loop poster="assets/video/video.png" id="bgvid">
-          <source src="assets/video/detroit_short.mp4" type="video/mp4">
+      <video playsinline autoplay loop poster="assets/video/video-2.png" id="bgvid">
+          <source src="assets/video/the-change.mp4" type="video/mp4">
       </video>
       <section id="center-content">
         <section class="content-box">
           <article class="feature-neighborhood-content">
-            <h3 id="feature-neighborhood-title"></h3>
-            <p id="feature-neighborhood-text"></p>
+            <h3 id="feature-neighborhood-title">FEATURED NEIGHBORHOOD</h3>
+            <p id="feature-neighborhood-text">Some text that describes the featured neighborhood.</p>
             <a id="feature-neighborhood-link" href="" target="_blank"><button class="btn btn-danger">LEARN MORE</button></a>
           </article>
           <a href="map.v2.html" target="_blank">
@@ -195,7 +198,7 @@
   <script>
     var vid = document.getElementById("bgvid"),
     pauseButton = document.getElementById("vidpause");
-    vid.playbackRate = 500;
+    //vid.playbackRate = 500;
     if (window.matchMedia('(prefers-reduced-motion)').matches) {
       vid.removeAttribute("autoplay");
       vid.pause();
