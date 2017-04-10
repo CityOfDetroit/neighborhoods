@@ -42,7 +42,7 @@ h1, h2, h3, h4, h5 {
   max-width: 30em; }
 
 #logo-2 > img {
-  height: 12vh; }
+  height: 8vh; }
 
 #search {
   width: 30em; }
@@ -311,6 +311,53 @@ h1, h2, h3, h4, h5 {
 
 .info-card-row > .metric-box > span {
   font-size: 1em; }
+
+.info-card-row > .mayor-council {
+  width: 100%;
+  display: flex; }
+
+.info-card-row > .mayor-council > article {
+  display: flex;
+  width: 50%; }
+
+.info-card-row > .mayor-council > article > .img-container {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2; }
+
+.info-card-row > .mayor-council > article > .img-container > img {
+  width: 100%; }
+
+.info-card-row > .mayor-council > article > .text-content {
+  font-size: 80%;
+  flex: 1;
+  margin-right: .5em;
+  height: 2.5em;
+  padding: .75em .5em 2em 3em;
+  border: 1px solid #000;
+  position: relative;
+  top: 1em;
+  left: -2em; }
+
+.info-card-row > .mayor-council > article > .text-content > span, .district-manager > article > .text-content > span {
+  position: absolute;
+  padding: .25em;
+  background-color: #fff;
+  top: -1.15em;
+  left: 3em; }
+
+.district-manager {
+  width: 100%;
+  margin-right: 2em; }
+
+.district-manager > article > .text-content {
+  font-size: 80%;
+  height: 2.5em;
+  padding: 1em .5em 2em 1em;
+  border: 1px solid #000;
+  position: relative; }
 
 #learn-more-btn {
   transition: all 0.2s ease-in-out;

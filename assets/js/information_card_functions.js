@@ -7,6 +7,14 @@ var informationCardModule = (function(){
     active              : '',
     info                : '',
     summary             : '',
+    mayor               : '',
+    mayorURL            : '',
+    mayorImg            : '',
+    council             : '',
+    councilURL          : '',
+    councilImg          : '',
+    dManager            : '',
+    dManagerURL         : '',
     districts           : '',
     neighborhoods       : '',
     avgHouseholdIncome  : '',
@@ -51,6 +59,14 @@ var informationCardModule = (function(){
         this.url = infoObj.properties.url;
         this.video = infoObj.properties.video;
         this.summary = infoObj.properties.summary;
+        this.mayor = infoObj.properties.mayor;
+        this.mayorURL = infoObj.properties.mayorURL;
+        this.mayorImg = infoObj.properties.mayorImg;
+        this.council = infoObj.properties.council;
+        this.councilURL = infoObj.properties.councilURL;
+        this.councilImg = infoObj.properties.councilImg;
+        this.dManager = infoObj.properties.dManager;
+        this.dManagerURL = infoObj.properties.dManagerURL;
         this.neighborhoods = infoObj.properties.neighborhoods;
         (infoObj.properties.type === 'neighborhood') ? this.districts = infoObj.properties.districts : 0;
         this.avgHouseholdIncome = infoObj.properties.avgHouseholdIncome;
@@ -63,6 +79,11 @@ var informationCardModule = (function(){
       console.log('will load data to card');
       document.getElementById('neighborhood-name').innerHTML = this.name;
       document.querySelector('.info-card-row > .neighborhood-summary').innerHTML = this.summary;
+      document.querySelector('.mayor > .text-content').innerHTML = '<span>Mayor</span><a href="'+ this.mayorURL +'" target="_blank">'+ this.mayor +'</a>';
+      document.querySelector('.mayor > .img-container').innerHTML = '<img src="' + this.mayorImg + '" alt="' + this.mayor + '"></img>';
+      document.querySelector('.council > .text-content').innerHTML = '<span>Council</span><a href="'+ this.councilURL +'" target="_blank">'+ this.council +'</a>';
+      document.querySelector('.council > .img-container').innerHTML = '<img src="' + this.councilImg + '" alt="' + this.council + '"></img>';
+      document.querySelector('.distrit-manager-content > .text-content').innerHTML = '<span>District Manager</span><a href="'+ this.dManagerURL +'" target="_blank">'+ this.dManager +'</a>';
       document.querySelector('.video-wrap').innerHTML = this.video;
       (this.type === 'district') ? document.getElementById('card-type').innerHTML = 'District' : document.getElementById('card-type').innerHTML = 'Nearby';
       (this.type === 'neighborhood') ? this.createDistrictsList() : document.querySelector('.corresponding-districts').innerHTML = '';

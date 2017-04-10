@@ -226,16 +226,6 @@ map.on('load', function (e) {
         "line-width": 3
       }
     });
-// When the user moves their mouse over the page, we look for features
-// at the mouse position (e.point) and within the states layer (states-fill).
-// If a feature is found, then we'll update the filter in the state-fills-hover
-// layer to only show that state, thus making a hover effect.
-
-});
-
-var districtPopup = new mapboxgl.Popup({
-    closeButton: true,
-    closeOnClick: false
 });
 
 map.on("mousemove", function(e) {
@@ -246,19 +236,6 @@ map.on("mousemove", function(e) {
   if (features.length) {
     map.setFilter("council-fills-hover", ["==", "districts", features[0].properties.districts]);
     var feature = features[0];
-
-    // Populate the popup and set its coordinates
-    // based on the feature found.
-    // console.log(feature);
-    // if(feature.properties.districts === '2'){
-    //   districtPopup.setLngLat(map.unproject(e.point))
-    //       .setHTML('<h5>District ' + feature.properties.districts + ' <span id="district-popup-img"><img src="assets/img/marygrove-logo-badge.png" alt="Marygrove"></img></span></h5>')
-    //       .addTo(map);
-    // }else{
-    //   districtPopup.setLngLat(map.unproject(e.point))
-    //       .setHTML('<h5>District ' + feature.properties.districts + ' <span id="district-popup-img"><img src="assets/img/new.png" alt="badge"></img></span></h5>')
-    //       .addTo(map);
-    // }
   } else {
     features = map.queryRenderedFeatures(e.point, {
       layers: ["neighborhoods-fill"]
@@ -268,7 +245,6 @@ map.on("mousemove", function(e) {
       map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
     }else{
       map.setFilter("council-fills-hover", ["==", "name", ""]);
-      districtPopup.remove();
     }
   }
 });
@@ -277,22 +253,4 @@ map.on("mousemove", function(e) {
 map.on("mouseout", function() {
   map.setFilter("council-fills-hover", ["==", "name", ""]);
   map.setFilter("hoods-fills-hover", ["==", "name", ""]);
-});
-
-//create function
-function flyToStore(currentFeature) {
-    map.flyTo({
-        center: currentFeature.geometry.coordinates,
-        zoom: 16
-    });
-}
-// Add an event listener for when a user clicks on the map
-map.on('click', function(e) {
-    // Query all the rendered points in the view
-    var features = map.queryRenderedFeatures(e.point, {
-        layers: ['council-fills-hover']
-    });
-    if (features.length) {
-      districtPopup.remove();
-    }
 });

@@ -16,8 +16,17 @@ h1,h2,h3,h4,h5{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 #logo-3{
-  margin-top: -1em;
   max-width: 30em;
+}
+@media all and (max-width: 850px) {
+	#logo-3{
+	  width: 20em;
+	}
+}
+@media all and (max-width: 600px) {
+	#logo-3{
+	  width: 15em;
+	}
 }
 #logo-3 > img{
   width: 100%;
