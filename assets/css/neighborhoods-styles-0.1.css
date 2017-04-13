@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5 {
   text-decoration: none; }
 
 #logo {
-  background: #000;
+  background: #009581;
   max-width: 8em; }
 
 #logo > img {
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5 {
   width: 18em; }
 
 #site-title {
-  background: #000;
+  background: #009581;
   height: 8vh;
   padding: 0 1em 0 0;
   max-width: 15em;
@@ -68,14 +68,14 @@ h1, h2, h3, h4, h5 {
 
 #search-btn {
   background: #fff;
-  color: #000;
+  color: #009581;
   font-size: 2.25em;
   padding: 0 1em;
   cursor: pointer;
   transition: all 0.2s ease-in-out; }
 
 #search-btn:hover {
-  color: #000;
+  color: #009581;
   font-size: 2.5em;
   transition: all 0.2s ease-in-out; }
 
@@ -134,12 +134,12 @@ h1, h2, h3, h4, h5 {
   transition: all 0.2s ease-in-out; }
 
 .sub-menu-container > .sub-menu-item:hover {
-  background: #000;
+  background: #009581;
   color: #fff;
   transition: all 0.2s ease-in-out; }
 
 .sub-menu-container > .sub-menu-item.active > span {
-  color: #000; }
+  color: #009581; }
 
 .sub-menu-container > .sub-menu-item.active:hover > span {
   color: #FFD769; }
@@ -250,7 +250,7 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   width: 8em;
   height: 7em;
-  background: #000;
+  background: #009581;
   padding: .25em;
   margin-right: .2em;
   margin-bottom: .2em; }

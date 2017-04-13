@@ -35,7 +35,7 @@ h1, h2, h3, h4, h5 {
   text-decoration: none; }
 
 #logo {
-  background: #000;
+  background: #009581;
   max-width: 8em; }
 
 #logo > img {
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5 {
   width: 18em; }
 
 #site-title {
-  background: #000;
+  background: #009581;
   height: 8vh;
   padding: 0 1em 0 0;
   max-width: 15em;
@@ -69,14 +69,14 @@ h1, h2, h3, h4, h5 {
 
 #search-btn {
   background: #fff;
-  color: #000;
+  color: #009581;
   font-size: 2.25em;
   padding: 0 1em;
   cursor: pointer;
   transition: all 0.2s ease-in-out; }
 
 #search-btn:hover {
-  color: #000;
+  color: #009581;
   font-size: 2.5em;
   transition: all 0.2s ease-in-out; }
 
@@ -135,12 +135,12 @@ h1, h2, h3, h4, h5 {
   transition: all 0.2s ease-in-out; }
 
 .sub-menu-container > .sub-menu-item:hover {
-  background: #000;
+  background: #009581;
   color: #fff;
   transition: all 0.2s ease-in-out; }
 
 .sub-menu-container > .sub-menu-item.active > span {
-  color: #000; }
+  color: #009581; }
 
 .sub-menu-container > .sub-menu-item.active:hover > span {
   color: #FFD769; }
@@ -251,7 +251,7 @@ h1, h2, h3, h4, h5 {
   text-align: center;
   width: 8em;
   height: 7em;
-  background: #000;
+  background: #009581;
   padding: .25em;
   margin-right: .2em;
   margin-bottom: .2em; }
@@ -548,11 +548,12 @@ video#bgvid {
 #under-fold-content {
   width: 100%; }
 
-#under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content {
-  background: #fff; }
+#under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content, #under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content > div > ul > li > a {
+  background: #fff;
+  color: #000; }
 
-#under-fold-content > .grid-row:nth-child(odd) > .grid-item.text-content {
-  background: #000;
+#under-fold-content > .grid-row:nth-child(odd) > .grid-item.text-content, #under-fold-content > .grid-row:nth-child(odd) > .grid-item.text-content > div > ul > li > a {
+  background: #009581;
   color: #fff; }
 
 .grid-row {
@@ -587,7 +588,6 @@ video#bgvid {
   left: 0;
   bottom: 0;
   position: absolute;
-  color: #000;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 0 1em;
   width: 100%; }
@@ -623,7 +623,7 @@ footer {
   padding: 2em;
   font-size: 1.25em;
   color: #fff;
-  background: #000;
+  background: #009581;
   width: 100%; }
 
 .footer-section-item {

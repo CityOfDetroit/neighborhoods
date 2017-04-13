@@ -17,7 +17,8 @@ var informationCardModule = (function(){
     dManagerURL         : '',
     districts           : '',
     neighborhoods       : '',
-    avgHouseholdIncome  : '',
+    demolitions         : '',
+    investments         : '',
     garbagePickupDay    : '',
     parks               : '',
     residents           : '',
@@ -69,7 +70,8 @@ var informationCardModule = (function(){
         this.dManagerURL = infoObj.properties.dManagerURL;
         this.neighborhoods = infoObj.properties.neighborhoods;
         (infoObj.properties.type === 'neighborhood') ? this.districts = infoObj.properties.districts : 0;
-        this.avgHouseholdIncome = infoObj.properties.avgHouseholdIncome;
+        // (infoObj.properties.type === 'district') ? this.demolitions = infoObj.properties.demolitions : 0;
+        this.investments = infoObj.properties.investments;
         this.garbagePickupDay = infoObj.properties.garbagePickupDay;
         this.parks = infoObj.properties.parks;
         this.residents = infoObj.properties.residents;
@@ -117,7 +119,18 @@ var informationCardModule = (function(){
       document.querySelector('.near-neighborhoods-list').innerHTML = tempHtml;
     },
     createFourSquareData: function () {
-      document.getElementById('household-income').innerHTML = '$' + this.avgHouseholdIncome + 'k';
+      // if(this.type === 'neighborhood'){
+      //   document.getElementById('home-price-or-demolitions').innerHTML = 'AVG.HOME PRICE';
+      //   document.getElementById('household-income').innerHTML = '$' + this.investments + 'k';
+      //   document.getElementById('home-price-or-demolitions-img').src = 'assets/img/money-wht.png';
+      // }else{
+      //   document.getElementById('home-price-or-demolitions').innerHTML = 'DEMOLITIONS';
+      //   document.getElementById('household-income').innerHTML = this.demolitions;
+      //   document.getElementById('home-price-or-demolitions-img').src = 'assets/img/demolition_wht.png';
+      // }
+      document.getElementById('home-price-or-demolitions').innerHTML = 'INVESTMENTS';
+      document.getElementById('household-income').innerHTML = '$' + this.investments + 'k';
+      document.getElementById('home-price-or-demolitions-img').src = 'assets/img/money-wht.png';
       document.getElementById('garbage-pickup-day').innerHTML = this.garbagePickupDay.toUpperCase();
       document.getElementById('block-clubs').innerHTML = this.parks;
       document.getElementById('residents').innerHTML = this.residents;

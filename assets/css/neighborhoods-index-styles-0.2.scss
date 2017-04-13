@@ -203,10 +203,11 @@ video#bgvid {
 #under-fold-content{
   width: 100%;
 }
-#under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content{
+#under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content, #under-fold-content > .grid-row:nth-child(even) > .grid-item.text-content > div > ul > li > a{
   background: $top-bar-font-color;
+	color: #000;
 }
-#under-fold-content > .grid-row:nth-child(odd) > .grid-item.text-content{
+#under-fold-content > .grid-row:nth-child(odd) > .grid-item.text-content, #under-fold-content > .grid-row:nth-child(odd) > .grid-item.text-content > div > ul > li > a{
   background: $detroit-color-1;
   color: $top-bar-font-color;
 }
@@ -249,7 +250,6 @@ video#bgvid {
   left: 0;
   bottom: 0;
   position: absolute;
-  color: $detroit-color-1;
   background-color: rgba(255,255,255,.5);
   padding: 0 1em;
   width: 100%;

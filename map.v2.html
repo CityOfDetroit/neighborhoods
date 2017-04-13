@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/css/menu-styles.css" />
   <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://js.arcgis.com/3.20/"></script>
   <link rel="stylesheet" href="assets/css/neighborhoods-styles-0.2.css">
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -25,7 +26,7 @@
     <section id="top">
       <section id="top-container">
         <a href="index.html"><article id="logo-2">
-          <img src="assets/img/Logo/small-wht-logo.png" alt="This is Detroit">
+          <img src="assets/img/Logo/small-dark-green-logo.png" alt="The Neighborhoods">
         </article></a>
         <div id="spacing-title-search"></div>
         <article id="search">
@@ -121,16 +122,20 @@
         </article>
         <section class="info-card-row four-squares">
           <article class="learn-more-btn-space-mover left"></article>
-          <article class='metric-box' title="This data does not include foreclosure sales.">
-            <h5>AVG. HOME PRICE</h5>
-            <img src="assets/img/money-wht.png" alt="avg. home price"/>
-            <br><span id="household-income"></span>
-          </article>
-          <article class='metric-box'>
-            <h5>GARBAGE PICK UP DAY</h5>
-            <img src="assets/img/garbage-wht.png" alt="garbage pick up day"/>
-            <br><span id="garbage-pickup-day"></span>
-          </article>
+          <a href="https://cityofdetroit.github.io/neighborhood-data/" target="_blank">
+            <article class='metric-box' title="This data does not include foreclosure sales.">
+              <h5 id="home-price-or-demolitions">INVESTMENTS</h5>
+              <img id="home-price-or-demolitions-img" src="assets/img/money-wht.png" alt="avg. home price"/>
+              <br><span id="household-income"></span>
+            </article>
+          </a>
+          <a href="http://codstaging.detroitmi.gov/publicworks" target="_blank">
+            <article class='metric-box'>
+              <h5>GARBAGE PICK UP DAY</h5>
+              <img src="assets/img/garbage-wht.png" alt="garbage pick up day"/>
+              <br><span id="garbage-pickup-day"></span>
+            </article>
+          </a>
           <article class='metric-box'>
             <h5>PARKS</h5>
             <img src="assets/img/tree-wht.png" alt="number of parks"/>
@@ -151,6 +156,7 @@
   <script src='assets/js/menu_functionality.js'></script>
   <script src='assets/js/information_card_functions.js'></script>
   <script src='assets/js/map_section_click_module.js'></script>
+  <script src='assets/js/search_bar_map.js'></script>
   <script src='assets/js/event_listeners.js'></script>
 </body>
 </html>

@@ -38,10 +38,10 @@ main{
 	max-height: $top-bar-height;
 }
 #logo-3{
-  max-width: 30em;
+  max-width: 22em;
 }
 #logo-3 > img{
-	max-height: 8vh;
+	width: 100%;
 }
 #search{
   flex: 1;
@@ -76,7 +76,7 @@ main{
   background-color: transparent;
 }
 #search-btn > span{
-  top: .25em;
+	top: -.5em;
   margin: 0;
 }
 @-webkit-keyframes input-line {
@@ -116,6 +116,12 @@ main{
 }
 #spacing-title-search{
 	flex: 1;
+	color: $detroit-color-1;
+}
+#spacing-title-search > h2{
+	position: relative;
+	top: 1.2em;
+	font-weight: bold;
 }
 #navigation{
 	width: $top-bar-height;
@@ -134,9 +140,24 @@ main{
 	margin-bottom: 0;
 }
 .section-headers{
+	position: relative;
 	background: $detroit-color-1;
 	color: $top-bar-font-color;
 	padding: 1em .5em;
+}
+.section-headers > span > a{
+	color: $top-bar-font-color;
+}
+.section-headers > a{
+	position: absolute;
+	right: 1em;
+	color: $top-bar-font-color;
+	font-size: 60%;
+}
+.section-headers > a > .edit-this > img{
+	position: relative;
+	top:-.5em;
+	width: 2em;
 }
 .content-row > .four-squares-section{
 	background: $detroit-color-1;
@@ -200,33 +221,37 @@ main{
 .four-squares-section > .pair.first-pair{
 	border-bottom: 1px solid #e7e7e7;
 }
-.four-squares-section > .pair.first-pair > .square-item:first-child{
+.four-squares-section > .pair.first-pair > .square-item:first-child, .four-squares-section > .pair.first-pair > a:first-child{
 	border-right: 1px solid #e7e7e7;
 }
-.four-squares-section > .pair.second-pair > .square-item:first-child{
+.four-squares-section > .pair.second-pair > .square-item:first-child, .four-squares-section > .pair.second-pair > a:first-child{
 	border-right: 1px solid #e7e7e7;
 }
-.four-squares-section > .single-block > .square-item{
+.four-squares-section > .single-block > .square-item, .four-squares-section > .single-block > a > .square-item{
 	padding: 2em;
 	margin: auto;
 	width: 100%;
 	max-width: 800px;
 }
-.four-squares-section > .pair > .square-item{
+.four-squares-section > .pair > .square-item, .four-squares-section > .pair > a{
 	padding: 2em;
 	margin: auto;
 	text-align: center;
 	width: 50%;
 }
-.four-squares-section > .pair > .square-item > img{
+.four-squares-section > .pair > a{
+	color: $top-bar-font-color;
+	text-decoration: none;
+}
+.four-squares-section > .pair > .square-item > img, .four-squares-section > .pair > a > .square-item > img{
 	float: none;
 	margin: 0;
 	width: 8em;
 }
-.four-squares-section > .pair > .square-item > h5{
+.four-squares-section > .pair > .square-item > h5, .four-squares-section > .pair > a > .square-item > h5{
 	clear: both;
 }
-.four-squares-section > .pair > .square-item > span{
+.four-squares-section > .pair > .square-item > span, .four-squares-section > .pair > a > .square-item > span{
 	font-size: 2.5em;
 }
 // ================== profiles ==============================
@@ -386,6 +411,7 @@ main{
 	@extend .flex-container;
 }
 .event-details > .event-date{
+	color: $detroit-color-1;
 	padding-right: .5em;
 	font-size: 4em;
 	font-weight: bold;
@@ -535,6 +561,7 @@ main{
 	padding: .5em;
 	border: .2em solid $detroit-color-1;
 	transition: all .2s ease-in-out;
+	color: $detroit-color-1
 }
 .more-stories-btn:hover{
 	color: $top-bar-font-color;
@@ -621,7 +648,7 @@ main{
 	overflow: hidden;
 	display: flex;
 	position: relative;
-	top: 3em;
+	top: 5em;
 	left: -2em;
 	margin-bottom: 5em;
 }
@@ -652,6 +679,9 @@ main{
 }
 .top-header-section > .work{
 	background-image: url('../img/jobs.jpg');
+}
+.top-header-section > .stories-index{
+	background-image: url('../img/stories-header.jpg');
 }
 .top-header-section > .text-content{
 	width: 100%;
@@ -815,6 +845,64 @@ main{
 .carousel-caption > p{
 	font-size: 1.5em;
 }
+// ================= story pages =================
+.top-header-story-section{
+	margin-top: 5em;
+}
+.top-header-story-section > .img-container{
+	width: calc(100% + 4em);
+	position: relative;
+	left: -2em;
+	height: 40vh;
+	overflow: hidden;
+}
+.top-header-story-section > .img-container > img{
+	position: relative;
+	top: -5em;
+	width: 100%;
+}
+.top-header-story-section > .story-title > h2{
+	font:{
+		size: 4em;
+		weight: bold;
+	}
+	color: $detroit-color-2
+}
+.top-header-story-section > .story-subtitle{
+	position: relative;
+	top: -1.5em;
+}
+.top-header-story-section > .story-byline{
+	font-size: 2em;
+	position: relative;
+	top: -1em;
+}
+.story-main-content{
+	margin-bottom: 2em;
+	padding: 0 10%;
+	font-size: 2em;
+}
+.story-main-content > .video{
+	width: 100%;
+	padding: 1em;
+	display: flex;
+}
+.story-main-content > .quote-section{
+	padding: 1em;
+	width: 50%;
+	background-color: $detroit-color-1;
+	color: $top-bar-font-color;
+	float: right;
+	clear: both;
+}
+.story-main-content > .quote-section > h5{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.story-main-content > .video > video{
+	margin: auto;
+	width: 100%;
+}
 // ================ footer =======================
 footer{
   padding: 2em;
@@ -884,6 +972,13 @@ footer{
 	position: relative;
 }
 /*=================== surgical ==================*/
+.full-width{width: 100%}
+.margin-top-1{margin-top: 1em;}
+.margin-top-2{margin-top: 2em;}
+.margin-top-3{margin-top: 3em;}
+.margin-top-4{margin-top: 4em;}
+.margin-top-5{margin-top: 5em;}
+.margin-top-6{margin-top: 6em;}
 .order1{
 	order: 1;
 }

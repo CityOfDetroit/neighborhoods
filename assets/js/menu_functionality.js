@@ -213,30 +213,12 @@
   var menuDisplay = function menuDisplay() {
     menu.changeDisplay();
   };
-  var moveToPoint = function moveToPoint(coordinates){
-    map.flyTo({
-      center: coordinates
+  document.getElementById('navigation').addEventListener('click', menuDisplay);
+  Array.from(document.getElementsByClassName('sub-menu-item')).forEach(function(item) {
+    item.addEventListener('click', function (e) {
+      subMenuAction(e.target);
     });
-  };
-  var moveToPointAction = function moveToPointAction(triggerObj) {
-      let triggerID = '';
-      if(triggerObj.id === ''){
-        triggerID = triggerObj.parentNode.id;
-      }else{
-        triggerID = triggerObj.id;
-      }
-      if(triggerID == 'search-btn'){
-        moveToPoint([-83.1510047, 42.426127]);
-      }else{
-        if(event.keyCode == 13) {
-          moveToPoint([-83.1510047, 42.426127]);
-        }
-      }
-
-      // map.fitBounds([[
-      //       -83.1510047, 42.426127
-      // ]]);
-  };
+  });
   var moveBackToTop = function moveBackToTop() {
     document.getElementById('navigation').scrollIntoView();
   };
@@ -244,22 +226,4 @@
   if(backToTopBtn !== null){
     backToTopBtn.addEventListener('click', moveBackToTop);
   }
-  var searchBtn = document.getElementById('search-btn');
-  if(searchBtn !== null){
-    searchBtn.addEventListener('click', function (e) {
-      moveToPointAction(e.target);
-    });
-  }
-  var addresSearch = document.getElementById('address-search');
-  if(addresSearch !== null){
-    addresSearch.addEventListener('keydown', function (e) {
-      moveToPointAction(e);
-    });
-  }
-  document.getElementById('navigation').addEventListener('click', menuDisplay);
-  Array.from(document.getElementsByClassName('sub-menu-item')).forEach(function(item) {
-    item.addEventListener('click', function (e) {
-      subMenuAction(e.target);
-    });
-  });
 })(window);

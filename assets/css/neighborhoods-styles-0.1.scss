@@ -5,7 +5,8 @@
 @import url('../fonts/dosis/Dosis-Regular.ttf');
 @import url('../fonts/opensans/OpenSans-Regular.ttf');
 /*================== variables =================*/
-$detroit-color-1: #000;
+$detroit-color-1: #009581;
+$detroit-color-2: #004445;
 $top-bar-color: none;
 $top-bar-font-color: #fff;
 $top-bar-height: 8vh;
@@ -88,7 +89,7 @@ h1,h2,h3,h4,h5{
 }
 #search-btn{
 	background: #fff;
-	color: #000;
+	color: $detroit-color-1;
 	font-size: 2.25em;
 	padding: 0 1em;
 	@extend .flex-container;

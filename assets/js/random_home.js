@@ -29,34 +29,34 @@ var homeStorySlider = (function(){
   var counter = 0;
   var storyList = [
     {
-      'title' : 'JAZZ IT UP',
-      'text'  : 'Immerse yourself in the world of Jazz at the "Oldest Running Jazz Club" in the world, here in Detroit.',
-      'img'   : 'assets/img/DD_Web/Bakers1.jpg',
-      'link'  : 'bagley.html'
+      'title' : 'CLEANING THINGS UP',
+      'text'  : 'From dirty lots to green space',
+      'img'   : 'assets/img/stories/Ronnie-jones.png',
+      'link'  : 'cleaning_things_up.html'
     },
     {
-      'title' : 'KNOW YOUR FUTURE',
-      'text'  : 'Find what the future might bring over a nice cup of tea.',
-      'img'   : 'assets/img/DD_Web/tarottea4.jpg',
-      'link'  : 'bagley.html'
+      'title' : 'CATCH THESE DUMPERS',
+      'text'  : 'Help the police identify suspects',
+      'img'   : 'assets/img/stories/Dumping.png',
+      'link'  : 'catch_these_dumpers.html'
     },
     {
-      'title' : 'TITLE 3',
-      'text'  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'img'   : 'assets/img/DD_Web/DetVsEvery2.jpg',
-      'link'  : 'bagley.html'
+      'title' : 'FAMILY-FRIENDLY',
+      'text'  : 'One of the westside\'s unsung communities',
+      'img'   : 'assets/img/stories/Schaefer_7-8.png',
+      'link'  : 'family-friendly.html'
     },
     {
-      'title' : 'TITLE 4',
-      'text'  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'img'   : 'assets/img/DD_Web/execucuts4.jpg',
-      'link'  : 'bagley.html'
+      'title' : 'PROGRESS MEASURED',
+      'text'  : 'NeighborhoodWorks shows data at your fingers',
+      'img'   : 'assets/img/stories/map-preview.png',
+      'link'  : 'progress_measured.html'
     },
     {
-      'title' : 'TITLE 5',
-      'text'  : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      'img'   : 'assets/img/DD_Web/Avenue_of_Fashion_Mural.jpg',
-      'link'  : 'bagley.html'
+      'title' : 'FITZ FORWARD',
+      'text'  : 'A fresh take on development',
+      'img'   : 'assets/img/stories/Fitzgerald_2.jpg',
+      'link'  : 'fitz_forward.html'
     }
   ];
 
@@ -96,7 +96,7 @@ var homeStorySlider = (function(){
   function displayInfo(){
     document.getElementById('feature-neighborhood-title').innerHTML = storyList[counter].title;
     document.getElementById('feature-neighborhood-text').innerHTML = storyList[counter].text;
-    document.getElementById('feature-neighborhood-link').href = 'neighborhoods/' + storyList[counter].link;
+    document.getElementById('feature-neighborhood-link').href = 'stories/' + storyList[counter].link;
     document.getElementById('content').style.backgroundImage = 'url(' + storyList[counter].img + ')';
   }
   function changeSlider(btn){

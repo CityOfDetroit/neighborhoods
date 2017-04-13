@@ -11,7 +11,7 @@ span.menu.more-info {
 	top: 28px;
 	font-size: 1.4em;
 	letter-spacing: 1px;
-	color: #000;
+	color: #009581;
 }
 
 .menu-container {
@@ -61,7 +61,7 @@ span.menu.more-info {
 	width: 40px;
 	height: 4px;
 	border-radius: 2px;
-	background: #000;
+	background: #009581;
 }
 
 .menu-container label:before {
@@ -116,7 +116,7 @@ span.menu.more-info {
 	width: 40px;
 	height: 4px;
 	border-radius: 2px;
-	background: #000;
+	background: #009581;
 }
 
 .menu-container label:after {
@@ -171,7 +171,7 @@ span.menu.more-info {
 	width: 40px;
 	height: 4px;
 	border-radius: 2px;
-	background: #000;
+	background: #009581;
 	-webkit-animation: animationBurgerTopReverse 1s ease forwards;
 	animation: animationBurgerTopReverse 1s ease forwards;
 }
@@ -221,7 +221,7 @@ span.menu.more-info {
 	width: 40px;
 	height: 4px;
 	border-radius: 2px;
-	background: #000;
+	background: #009581;
 	-webkit-animation: animationBurgerBottomReverse 1s ease forwards;
 	animation: animationBurgerBottomReverse 1s ease forwards;
 }

@@ -168,12 +168,12 @@ h1, h2, h3, h4, h5 {
   transition: all 0.2s ease-in-out; }
 
 .sub-menu-container > .sub-menu-item:hover {
-  background: #000;
+  background: #009581;
   color: #fff;
   transition: all 0.2s ease-in-out; }
 
 .sub-menu-container > .sub-menu-item.active > span {
-  color: #000; }
+  color: #009581; }
 
 .sub-menu-container > .sub-menu-item.active:hover > span {
   color: #FFD769; }
@@ -292,24 +292,27 @@ h1, h2, h3, h4, h5 {
 #neighborhood-name {
   margin: 0; }
 
-.info-card-row > .metric-box {
+.info-card-row > .metric-box, .info-card-row > a > .metric-box {
   color: #fff;
   text-align: center;
   width: 8em;
   height: 7em;
-  background: #000;
+  background: #009581;
   padding: .25em;
   margin-right: .2em;
   margin-bottom: .2em; }
 
-.info-card-row > .metric-box > img {
+.info-card-row > a {
+  text-decoration: none; }
+
+.info-card-row > .metric-box > img, .info-card-row > a > .metric-box > img {
   width: 2em;
   height: 2em; }
 
-.info-card-row > .metric-box > h5 {
+.info-card-row > .metric-box > h5, .info-card-row > a > .metric-box > h5 {
   font-size: .75em; }
 
-.info-card-row > .metric-box > span {
+.info-card-row > .metric-box > span, .info-card-row > a > .metric-box > span {
   font-size: 1em; }
 
 .info-card-row > .mayor-council {
@@ -336,7 +339,7 @@ h1, h2, h3, h4, h5 {
   margin-right: .5em;
   height: 2.5em;
   padding: .75em .5em 2em 3em;
-  border: 1px solid #000;
+  border: 1px solid #009581;
   position: relative;
   top: 1em;
   left: -2em; }
@@ -356,7 +359,7 @@ h1, h2, h3, h4, h5 {
   font-size: 80%;
   height: 2.5em;
   padding: 1em .5em 2em 1em;
-  border: 1px solid #000;
+  border: 1px solid #009581;
   position: relative; }
 
 #learn-more-btn {

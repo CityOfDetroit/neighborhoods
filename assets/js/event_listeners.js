@@ -42,19 +42,23 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
           dManager            : '',
           dManagerURL         : '',
           neighborhoods       : ['Blackstone Park', 'Fitzgerald', 'Greenwich', 'Harmony Village'],
-          districts           : ['District 2'],
-          avgHouseholdIncome  : '65',
+          districts           : [],
+          investments         : '65',
           garbagePickupDay    : 'friday',
           parks               : data.features[0].properties.parks.toLocaleString(),
           residents           : data.features[0].properties.residentia.toLocaleString(),
         }
       };
+      districtData.features.forEach(function(item) {
+        console.log(item.attributes.districts);
+        dataObj.properties.districts.push('District ' + item.attributes.districts);
+      });
       switch (districtData.features[0].attributes.districts) {
         case '1':
           dataObj.properties.council = "James Tate";
           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/James-Tate";
           dataObj.properties.councilImg = "assets/img/mayor-council/James-Tate.jpg"
-          dataObj.properties.dManager = "Stephanie Young";
+          dataObj.properties.dManager = "Stephanie Young - 313.236.3473";
           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district1";
           break;
 
@@ -62,7 +66,7 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
           dataObj.properties.council = "George Cushingberry Jr.";
           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/George-Cushingberry";
           dataObj.properties.councilImg = "assets/img/mayor-council/George-Cushingberry.jpg"
-          dataObj.properties.dManager = "Kim Tandy";
+          dataObj.properties.dManager = "Kim Tandy - 313.236.3494";
           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district2";
           break;
 
@@ -70,7 +74,7 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
           dataObj.properties.council = "Scott Benson";
           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Scott-Benson";
           dataObj.properties.councilImg = "assets/img/mayor-council/Scott-Benson.jpg"
-          dataObj.properties.dManager = "Erinn Harris";
+          dataObj.properties.dManager = "Erinn Harris - 313.236.3504";
           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district3";
           break;
 
@@ -78,7 +82,7 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
           dataObj.properties.council = "André L. Spivey";
           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Andre-Spivey";
           dataObj.properties.councilImg = "assets/img/mayor-council/Andre-Spivey.jpg"
-          dataObj.properties.dManager = "Letty Azar";
+          dataObj.properties.dManager = "Letty Azar - 313.236.3518";
           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district4";
           break;
 
@@ -86,7 +90,7 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
           dataObj.properties.council = "Mary Sheffield";
           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Mary-Sheffield";
           dataObj.properties.councilImg = "assets/img/mayor-council/Mary-Sheffield.jpg"
-          dataObj.properties.dManager = "Vince Keenan";
+          dataObj.properties.dManager = "Vince Keenan - 313.236.3523";
           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district5";
           break;
 
@@ -94,14 +98,14 @@ var bagleyMoveThere = function bagleyMoveThere(e) {
           dataObj.properties.council = "Raquel Castañeda-López";
           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Raquel-Castaneda-Lopez";
           dataObj.properties.councilImg = "assets/img/mayor-council/Castaneda-Lopez.jpg"
-          dataObj.properties.dManager = "Ninfa Cancel";
+          dataObj.properties.dManager = "Ninfa Cancel - 313.236.3530";
           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district6";
           break;
         default:
           dataObj.properties.council = "Gabe Leland";
           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Gabe-Leland";
           dataObj.properties.councilImg = "assets/img/mayor-council/Gabe-Leland.jpg"
-          dataObj.properties.dManager = "Ray Solomon II";
+          dataObj.properties.dManager = "Ray Solomon II - 313.236.3516";
           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district7";
           break;
       }
@@ -150,7 +154,7 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
         dManager            : '',
         dManagerURL         : '',
         neighborhoods       : ['Blackstone Park', 'Fitzgerald', 'Greenwich'],
-        avgHouseholdIncome  : '65',
+        investments         : '163',
         garbagePickupDay    : 'mon/fri',
         parks               : data.features[0].attributes.parks.toLocaleString(),
         residents           : data.features[0].attributes.res_count.toLocaleString(),
@@ -161,7 +165,7 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
         dataObj.properties.council = "James Tate";
         dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/James-Tate";
         dataObj.properties.councilImg = "assets/img/mayor-council/James-Tate.jpg"
-        dataObj.properties.dManager = "Stephanie Young";
+        dataObj.properties.dManager = "Stephanie Young - 313.236.3473";
         dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district1";
         break;
 
@@ -169,7 +173,7 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
         dataObj.properties.council = "George Cushingberry Jr.";
         dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/George-Cushingberry";
         dataObj.properties.councilImg = "assets/img/mayor-council/George-Cushingberry.jpg"
-        dataObj.properties.dManager = "Kim Tandy";
+        dataObj.properties.dManager = "Kim Tandy - 313.236.3494";
         dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district2";
         break;
 
@@ -177,7 +181,7 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
         dataObj.properties.council = "Scott Benson";
         dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Scott-Benson";
         dataObj.properties.councilImg = "assets/img/mayor-council/Scott-Benson.jpg"
-        dataObj.properties.dManager = "Erinn Harris";
+        dataObj.properties.dManager = "Erinn Harris - 313.236.3504";
         dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district3";
         break;
 
@@ -185,7 +189,7 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
         dataObj.properties.council = "André L. Spivey";
         dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Andre-Spivey";
         dataObj.properties.councilImg = "assets/img/mayor-council/Andre-Spivey.jpg"
-        dataObj.properties.dManager = "Letty Azar";
+        dataObj.properties.dManager = "Letty Azar - 313.236.3518";
         dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district4";
         break;
 
@@ -193,7 +197,7 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
         dataObj.properties.council = "Mary Sheffield";
         dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Mary-Sheffield";
         dataObj.properties.councilImg = "assets/img/mayor-council/Mary-Sheffield.jpg"
-        dataObj.properties.dManager = "Vince Keenan";
+        dataObj.properties.dManager = "Vince Keenan - 313.236.3523";
         dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district5";
         break;
 
@@ -201,14 +205,14 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
         dataObj.properties.council = "Raquel Castañeda-López";
         dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Raquel-Castaneda-Lopez";
         dataObj.properties.councilImg = "assets/img/mayor-council/Castaneda-Lopez.jpg"
-        dataObj.properties.dManager = "Ninfa Cancel";
+        dataObj.properties.dManager = "Ninfa Cancel - 313.236.3530";
         dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district6";
         break;
       default:
         dataObj.properties.council = "Gabe Leland";
         dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Gabe-Leland";
         dataObj.properties.councilImg = "assets/img/mayor-council/Gabe-Leland.jpg"
-        dataObj.properties.dManager = "Ray Solomon II";
+        dataObj.properties.dManager = "Ray Solomon II - 313.236.3516";
         dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district7";
         break;
     }
@@ -220,3 +224,19 @@ var districtTwoMoveThere = function districtTwoMoveThere(e) {
 window.onload = function(){
   document.getElementById('click').checked = false;
 };
+var searchBar = Object.create(mapSearchBar);
+var searchBtn = document.getElementById('search-btn');
+if(searchBtn !== null){
+  searchBtn.addEventListener('click', function (e) {
+    searchBar.searchPlace(e.target);
+  });
+}
+var addresSearch = document.getElementById('address-search');
+if(addresSearch !== null){
+  addresSearch.addEventListener('keydown', function (e) {
+    if (e.preventDefaulted) {
+      return; // Do nothing if event already handled
+    }
+    searchBar.searchPlace(e);
+  });
+}

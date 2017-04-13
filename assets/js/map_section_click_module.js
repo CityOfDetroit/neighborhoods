@@ -34,7 +34,7 @@ var mapSectionClickModule = (function(informationCard){
             name                : 'District ' + feature.properties.districts,
             type                : 'district',
             url                 : 'district_' + feature.properties.districts + '.html',
-            video               : '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/Zi0u5nNDbPE" frameborder="0" allowfullscreen></iframe>',
+            video               : '<video width="100%" height="100%" controls="true" loop="true"><source src="assets/video/District2_Draft2.mp4" type="video/mp4">Your browser does not support the video tag.</video>',
             summary             : 'Sample summary text for this specific "District", good stuff. Some other news and highlights.',
             mayor               : 'Mayor Duggan',
             mayorURL            : 'http://www.detroitmi.gov/Government/Mayors-Office/Administration#duggan',
@@ -45,7 +45,7 @@ var mapSectionClickModule = (function(informationCard){
             dManager            : '',
             dManagerURL         : '',
             neighborhoods       : ['Blackstone Park', 'Fitzgerald', 'Greenwich'],
-            avgHouseholdIncome  : '65',
+            investments         : '15,819',
             garbagePickupDay    : 'mon/fri',
             parks               : feature.properties.parks.toLocaleString(),
             residents           : feature.properties.res_count.toLocaleString(),
@@ -56,7 +56,7 @@ var mapSectionClickModule = (function(informationCard){
             dataObj.properties.council = "James Tate";
             dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/James-Tate";
             dataObj.properties.councilImg = "assets/img/mayor-council/James-Tate.jpg"
-            dataObj.properties.dManager = "Stephanie Young";
+            dataObj.properties.dManager = "Stephanie Young - 313.236.3473";
             dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district1";
             break;
 
@@ -64,7 +64,7 @@ var mapSectionClickModule = (function(informationCard){
             dataObj.properties.council = "George Cushingberry Jr.";
             dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/George-Cushingberry";
             dataObj.properties.councilImg = "assets/img/mayor-council/George-Cushingberry.jpg"
-            dataObj.properties.dManager = "Kim Tandy";
+            dataObj.properties.dManager = "Kim Tandy - 313.236.3494";
             dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district2";
             break;
 
@@ -72,7 +72,7 @@ var mapSectionClickModule = (function(informationCard){
             dataObj.properties.council = "Scott Benson";
             dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Scott-Benson";
             dataObj.properties.councilImg = "assets/img/mayor-council/Scott-Benson.jpg"
-            dataObj.properties.dManager = "Erinn Harris";
+            dataObj.properties.dManager = "Erinn Harris - 313.236.3504";
             dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district3";
             break;
 
@@ -80,7 +80,7 @@ var mapSectionClickModule = (function(informationCard){
             dataObj.properties.council = "André L. Spivey";
             dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Andre-Spivey";
             dataObj.properties.councilImg = "assets/img/mayor-council/Andre-Spivey.jpg"
-            dataObj.properties.dManager = "Letty Azar";
+            dataObj.properties.dManager = "Letty Azar - 313.236.3518";
             dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district4";
             break;
 
@@ -88,7 +88,7 @@ var mapSectionClickModule = (function(informationCard){
             dataObj.properties.council = "Mary Sheffield";
             dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Mary-Sheffield";
             dataObj.properties.councilImg = "assets/img/mayor-council/Mary-Sheffield.jpg"
-            dataObj.properties.dManager = "Vince Keenan";
+            dataObj.properties.dManager = "Vince Keenan - 313.236.3523";
             dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district5";
             break;
 
@@ -96,14 +96,14 @@ var mapSectionClickModule = (function(informationCard){
             dataObj.properties.council = "Raquel Castañeda-López";
             dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Raquel-Castaneda-Lopez";
             dataObj.properties.councilImg = "assets/img/mayor-council/Castaneda-Lopez.jpg"
-            dataObj.properties.dManager = "Ninfa Cancel";
+            dataObj.properties.dManager = "Ninfa Cancel - 313.236.3530";
             dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district6";
             break;
           default:
             dataObj.properties.council = "Gabe Leland";
             dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Gabe-Leland";
             dataObj.properties.councilImg = "assets/img/mayor-council/Gabe-Leland.jpg"
-            dataObj.properties.dManager = "Ray Solomon II";
+            dataObj.properties.dManager = "Ray Solomon II - 313.236.3516";
             dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district7";
             break;
         }
@@ -128,8 +128,62 @@ var mapSectionClickModule = (function(informationCard){
                   let feature = features[0];
                   if(feature.properties.residentia !== undefined){
                     console.log(feature);
+                    console.log(JSON.stringify(feature.geometry));
                     console.log(e);
-                    console.log('https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/council_district/MapServer/1/query?where=&text=&objectIds=&time=&geometry='+e.lngLat.lng+'%2C+'+e.lngLat.lat+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelWithin&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=json');
+                    $.getJSON('https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Neighborhoods/MapServer/1/query?where=&text='+ feature.properties.name +'&objectIds=&time=&geometry=&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelWithin&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=json',function( data ) {
+                      console.log(data);
+                      // let tempJSON = JSON.stringify(data.features[0].geometry);
+                      // console.log(tempJSON);
+                      // require(["esri/config"], function(esriConfig) {
+                      //   esriConfig.defaults.io.corsEnabledServers.push("https://gis.detroitmi.gov/arcgis/");
+                      // });
+                      // require([
+                      //   "esri/request"
+                      // ], function(esriRequest, tempJSON) {
+                      //   var layerUrl = "https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Neighborhoods/MapServer/1";
+                      //   var layersRequest = esriRequest({
+                      //     url: layerUrl,
+                      //     content: {
+                      //       geometry : tempJSON,
+                      //       geometryType : 'esriGeometryPolygon',
+                      //       spatialReference : {
+                      //         wkid: 4326,
+                      //         latestWkid: 4326
+                      //       },
+                      //       outFields : '*',
+                      //     },
+                      //     handleAs: "html",
+                      //     callbackParamName: "callback"
+                      //   });
+                      //   layersRequest.then(
+                      //     function(response) {
+                      //       console.log("Success: ", response);
+                      //   }, function(error) {
+                      //       console.log("Error: ", error.message);
+                      //   });
+                      // });
+                      // require([
+                      //   "dojo/dom", "dojo/on",
+                      //   "esri/tasks/query", "esri/tasks/QueryTask", "dojo/domReady!"
+                      // ], function (dom, on, Query, QueryTask) {
+                      //
+                      //   var queryTask = new QueryTask("https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/Neighborhoods/MapServer/1");
+                      //   var query = new Query();
+                      //   query.returnGeometry = false;
+                      //   query.geometry = tempJSON;
+                      //   query.geometryType = 'esriGeometryPolygon';
+                      //   query.spatialRel = 'esriSpatialRelIntersects';
+                      //   query.outFields = '*';
+                      //   query.wkid = 4326;
+                      //   queryTask.execute(query, showResults);
+                      //
+                      //   function showResults (results) {
+                      //     console.log(results);
+                      //   }
+                      // });
+
+                    });
+
                     $.getJSON('https://gis.detroitmi.gov/arcgis/rest/services/NeighborhoodsApp/council_district/MapServer/1/query?where=&text=&objectIds=&time=&geometry='+e.lngLat.lng+'%2C+'+e.lngLat.lat+'&geometryType=esriGeometryPoint&inSR=4326&spatialRel=esriSpatialRelWithin&relationParam=&outFields=*&returnGeometry=true&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=4326&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&returnDistinctValues=false&resultOffset=&resultRecordCount=&f=json', function( data ) {
                       console.log(data);
                       let llb = new mapboxgl.LngLatBounds(feature.geometry.coordinates[0]);
@@ -166,19 +220,23 @@ var mapSectionClickModule = (function(informationCard){
                           dManager            : '',
                           dManagerURL         : '',
                           neighborhoods       : ['Blackstone Park', 'Fitzgerald', 'Greenwich', 'Harmony Village'],
-                          districts           : ['District 2'],
-                          avgHouseholdIncome  : '65',
+                          districts           : [],
+                          investments         : '65',
                           garbagePickupDay    : 'friday',
                           parks               : feature.properties.parks.toLocaleString(),
                           residents           : feature.properties.residentia.toLocaleString(),
                         }
                       };
+                      data.features.forEach(function(item) {
+                        console.log(item.attributes.districts);
+                        dataObj.properties.districts.push('District ' + item.attributes.districts);
+                      });
                       switch (data.features[0].attributes.districts) {
                         case '1':
                           dataObj.properties.council = "James Tate";
                           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/James-Tate";
                           dataObj.properties.councilImg = "assets/img/mayor-council/James-Tate.jpg"
-                          dataObj.properties.dManager = "Stephanie Young";
+                          dataObj.properties.dManager = "Stephanie Young - 313.236.3473";
                           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district1";
                           break;
 
@@ -186,7 +244,7 @@ var mapSectionClickModule = (function(informationCard){
                           dataObj.properties.council = "George Cushingberry Jr.";
                           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/George-Cushingberry";
                           dataObj.properties.councilImg = "assets/img/mayor-council/George-Cushingberry.jpg"
-                          dataObj.properties.dManager = "Kim Tandy";
+                          dataObj.properties.dManager = "Kim Tandy - 313.236.3494";
                           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district2";
                           break;
 
@@ -194,7 +252,7 @@ var mapSectionClickModule = (function(informationCard){
                           dataObj.properties.council = "Scott Benson";
                           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Scott-Benson";
                           dataObj.properties.councilImg = "assets/img/mayor-council/Scott-Benson.jpg"
-                          dataObj.properties.dManager = "Erinn Harris";
+                          dataObj.properties.dManager = "Erinn Harris - 313.236.3504";
                           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district3";
                           break;
 
@@ -202,7 +260,7 @@ var mapSectionClickModule = (function(informationCard){
                           dataObj.properties.council = "André L. Spivey";
                           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Andre-Spivey";
                           dataObj.properties.councilImg = "assets/img/mayor-council/Andre-Spivey.jpg"
-                          dataObj.properties.dManager = "Letty Azar";
+                          dataObj.properties.dManager = "Letty Azar - 313.236.3518";
                           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district4";
                           break;
 
@@ -210,7 +268,7 @@ var mapSectionClickModule = (function(informationCard){
                           dataObj.properties.council = "Mary Sheffield";
                           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Mary-Sheffield";
                           dataObj.properties.councilImg = "assets/img/mayor-council/Mary-Sheffield.jpg"
-                          dataObj.properties.dManager = "Vince Keenan";
+                          dataObj.properties.dManager = "Vince Keenan - 313.236.3523";
                           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district5";
                           break;
 
@@ -218,14 +276,14 @@ var mapSectionClickModule = (function(informationCard){
                           dataObj.properties.council = "Raquel Castañeda-López";
                           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Raquel-Castaneda-Lopez";
                           dataObj.properties.councilImg = "assets/img/mayor-council/Castaneda-Lopez.jpg"
-                          dataObj.properties.dManager = "Ninfa Cancel";
+                          dataObj.properties.dManager = "Ninfa Cancel - 313.236.3530";
                           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district6";
                           break;
                         default:
                           dataObj.properties.council = "Gabe Leland";
                           dataObj.properties.councilURL = "http://www.detroitmi.gov/Government/City-Council/Gabe-Leland";
                           dataObj.properties.councilImg = "assets/img/mayor-council/Gabe-Leland.jpg"
-                          dataObj.properties.dManager = "Ray Solomon II";
+                          dataObj.properties.dManager = "Ray Solomon II - 313.236.3516";
                           dataObj.properties.dManagerURL = "http://www.detroitmi.gov/Neighborhoods#dt-district7";
                           break;
                       }
